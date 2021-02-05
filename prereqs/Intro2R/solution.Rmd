@@ -1,0 +1,70 @@
+---
+title: "Solution for the Final Challenge"
+output:
+  html_notebook:
+    code_folding: hide
+---
+
+
+#### **Table 1.** mean measurements
+```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+if (!any(rownames(installed.packages()) == "kableExtra")){
+  install.packages("kableExtra")
+}
+library(kableExtra)
+
+data(iris)
+tmp <- sapply(1:4, function(x){tapply(iris[,x], iris[[5]], median)})
+colnames(tmp) <- colnames(iris)[1:4]
+nms <- colnames(tmp)
+tb <- kable(data.frame(tmp, stringsAsFactors=F), align='c')
+kable_styling(tb, bootstrap_options=c("striped", "hover", "responsive"), full_width=F, position="center")
+```
+
+#### **Figure 1.** Plot of the data from the table above
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# plot mean
+species <- levels(iris$Species)
+x <- c(1, 2, 3, 4)
+plot(x, tmp["setosa",], pch=20, col='red', ylim=c(0, max(tmp)), xaxt="n", xlab="Measurement type", ylab="Measurement results", cex.lab=1.0)
+points(x, tmp["virginica",], pch=20, col='orange')
+points(x, tmp["versicolor",], pch=20, col='blue')
+axis(1, at=x, labels=nms, las=2, cex.axis=0.7)
+text(c(1.5,1.5,1.5), c(0, 0.7, 1.4), labels=species, col=c("red", "blue", "orange"), cex=1.5)
+```
+
+#### **Figure 2.** Scatter plot of measurement data for each species
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# lattice plot
+if (!any(rownames(installed.packages()) == "lattice")){
+  install.packages("lattice")
+}
+library(lattice)
+
+if (!any(rownames(installed.packages()) == "reshape2")){
+  install.packages("reshape2")
+}
+library(reshape2)
+
+# create a new dataframe using melt function from reshape2
+dd <- melt(iris)
+xyplot(value ~ variable | Species, data=dd, scales=list(x=list(rot=90)), xlab="Measurements", ylab="Values")
+```
+
+#### **Figure 3.** Boxplot of measurement data
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# boxplot by group
+cols <- c("red", "blue", "orange")
+boxplot(value ~ Species + variable, data=dd, col = cols, xaxt="n", yaxt="n", xlab="Measurement Type", ylab="Values")
+axis(side=1, labels=FALSE)
+axis(side=2, las=2)
+text(x=1:12, y=par("usr")[3] - 0.85, labels=c("", "Sepal.Length", "", "", "Sepal.Width", "", "", "Petal.Length", "", "", "Petal.Width", ""), xpd=NA, srt=45, cex=1)
+legend("topright", fill=cols, legend=levels(dd$Species))
+
+```
+
+
+

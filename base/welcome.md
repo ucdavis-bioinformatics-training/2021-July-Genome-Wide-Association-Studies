@@ -53,14 +53,7 @@ We ask for a little more patience as this process is also new to us, but we are 
 
 ### Workshop Goals
 
-* End to End understanding of the basics of single cell RNAseq experiments
-  * Lectures/Discussions
-  * Technologies use
-  * Experimental design
-  * Cost estimation
-  * Workflow
-  * Data reduction
-  * Data analysis
+* End to End understanding of the basics of GWAS experiments
 
 * To work through a complete experiment, starting from raw data to completion, including making a few figures.
 
@@ -83,7 +76,7 @@ Workshop materials are all posted on github, and publicly available
 
 * This Intro to scRNAseq Workshop
 
-   [https://ucdavis-bioinformatics-training.github.io/2020-August-intro-scRNAseq/](https://ucdavis-bioinformatics-training.github.io/2020-August-intro-scRNAseq/)
+   [https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/](https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/)
 
 ### Computing Cluster
 
@@ -95,11 +88,3 @@ Everyone should get an account.
 Request an account -> sponsor is "Bioinformatics Core Workshop"
 
 If you already have, or have had in the past, an account on our systems, then please tell us your username, or email, and we will add you to the workshop. **Do not create a new account**
-
-Cluster usage will be under the slurm reservation  ‘intro_scrna_workshop’
-
-<!--
-Reservation will last 1 full week after the workshop and allow you to practice or run analyze your own data.
-
-**workshop       ACTIVE  2019-08-19T00:00:00  2019-08-31T00:00:00  12-00:00:00  rafter-[0,2,8,14,18]**
--->

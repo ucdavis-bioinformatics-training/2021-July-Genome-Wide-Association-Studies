@@ -31,11 +31,12 @@ navigation:
     url: https://ucdavis-bioinformatics-training.github.io/2021-March-Introduction-to-the-Command-Line-for-Bioinformatics/
   - title: R
     url: https://ucdavis-bioinformatics-training.github.io/2021-March-Introduction-to-R-for-Bioinformatics/
-  - heading: Data Reduction
-  - title: Project setup
-    url: data_reduction/project_setup
-  - title: Generating Expression Matrix
-    url: data_reduction/Expression_Matrix
+
+  - heading: Data Reduction and Analysis
+  - title: Data Reduction
+    url: data_reduction/GWAS
+  - title: Data Analysis
+    url: data_reduction/GWAS
 
   - heading: ETC
   - title: Closing thoughts

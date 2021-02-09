@@ -1,9 +1,5 @@
 # Closing Thoughts
 
-**The forest through the trees.**
-
-<img src="https://raw.githubusercontent.com/ucdavis-bioinformatics-training/ucdavis-bioinformatics-training.presentations/master/flowcharts/flowchart2.png" alt="flowchart2" width="600px"/>
-
 ## Be Consistent
 
 * Be Consistent
@@ -28,27 +24,11 @@
 
 ## Next Steps
 
-My recommendation is to follow all of the instructions again, from the beginning on your own and send emails to [training.bioinformatics@ucdavis.edu](mailto:training.bioinformatics@ucdavis.edu) And we will be responsive to answering questions
+My recommendation is to follow all of the instructions again, from the beginning on your own and send emails to [training.bioinformatics@ucdavis.edu](mailto:training.bioinformatics@ucdavis.edu). We will be responsive to answering questions.
 
 ##  Upcoming Workshops
 
-Now in our 13th year of training researchers, the UC Davis Bioinformatics Core invites you to attend one or more of our 2020 workshops. The following workshops are suitable for beginners, and are also of interest to those with some data analysis experience.
-
-| :------------- |:-------------:|
-|Aug 17 - Aug 19, 2020 | Advanced Single Cell RNA-Seq @ UC Davis |
-|Oct 5 - Oct 9, 2020 | Bioinformatics: Command Line/R Prerequisites |
-|Nov 30 - Dec 4, 2020 | Introduction to Analysis of Epigenetic Data |
-
-### Advanced Single Cell Analysis
-
-* Preprocessing scRNA sequence data
-* Running cellranger, star and salmon then comparing
-* Anchoring of samples to other samples
-* Monocle cell trajectory analysis
-* Velocity analysis
-* VDJ T and B cell analysis
-
-For more information on these and other events, and to register, go to [https://registration.genomecenter.ucdavis.edu/](https://registration.genomecenter.ucdavis.edu/)
+Check out our [upcoming course offerings](https://registration.genomecenter.ucdavis.edu/)!
 
 ## Previous Workshops available online
 If you would like to take a look at the [documentation](https://ucdavis-bioinformatics-training.github.io/) from previous workshops.

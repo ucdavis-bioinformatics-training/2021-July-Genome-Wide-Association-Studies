@@ -30,7 +30,7 @@ navigation:
   - title: CLI
     url: base/cli_prerequisites
   - title: R
-    url: r_prerequisites
+    url: base/r_prerequisites
 
   - heading: Data Reduction and Analysis
   - title: Data Reduction

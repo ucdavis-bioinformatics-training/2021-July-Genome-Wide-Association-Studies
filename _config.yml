@@ -28,9 +28,9 @@ navigation:
 
   - heading: Prerequisites
   - title: CLI
-    url: https://ucdavis-bioinformatics-training.github.io/2021-March-Introduction-to-the-Command-Line-for-Bioinformatics/
+    url: base/cli_prerequisites
   - title: R
-    url: https://ucdavis-bioinformatics-training.github.io/2021-March-Introduction-to-R-for-Bioinformatics/
+    url: r_prerequisites
 
   - heading: Data Reduction and Analysis
   - title: Data Reduction

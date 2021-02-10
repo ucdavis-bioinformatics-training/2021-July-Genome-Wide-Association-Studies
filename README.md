@@ -10,7 +10,7 @@ Contact - UC Davis Bioinformatics Core, [training.bioinformatics@ucdavis.edu](ma
 
 Learn to execute a successful GWAS experiment from design to analysis. This five-day online workshop will cover experimental design, data generation, and analysis on the command line. Participants will explore software and protocols, create and modify workflows, and diagnose/treat problematic data utilizing high performance computing services. Exercises will be performed on the command line with provided datasets.
 
-A basic understanding of the command line and R is a prerequisite for success in this course. We recommend beginners enroll in our introductory courses in CLI and R. After a brief review on the first day of the course,  we will not be providing instruction in basic CLI or R.
+To get the most out of this course, please complete the prerequisite material in [command line](base/cli_prerequisites) and [R](base/r_prerequisites) before the course, and contact us with any questions.
 
 This workshop will be held online from 9:00 am to 5:00 pm each day.
 
@@ -20,7 +20,7 @@ Participants must have access to a computer with a reliable connection to the in
 
 **Who should attend?** … Prior course participants have included faculty, post docs, grad students, staff, and industry researchers.
 
-**What are the prerequisites?** … A basic understanding of the command line and R is a prerequisite for success in this course. We recommend beginners enroll in our introductory courses in CLI and R. After a brief review on the first day of the course,  we will not be providing instruction in basic CLI or R.
+**What are the prerequisites?** … To get the most out of this course, please complete the prerequisite material in [command line](base/cli_prerequisites) and [R](base/r_prerequisites) before the course, and contact us with any questions.
 
 **What do I need to bring?** … Participants must have access to a computer with a reliable connection to the internet, current versions of [R version 4.0](https://cloud.r-project.org/) and [Rstudio](https://rstudio.com/products/rstudio/download/#download) installed, and an application that allows them to ssh into a server (e.g. Bash for Windows, or Terminal for Apple).
 

@@ -317,10 +317,10 @@ For variant analysis (any mapping based technique) it is not critical to remove,
 Removing duplicates is standard practice in variant analysis. Removing PCR duplicates can be **controversial** for RNAseq, but I'm in favor of it. It tells you alot about the original complexity of each sample and potential impact of sequencing depth.
 
 **However, I would never do PCR duplicate removal on single-end reads**
-<img src="preproc_mm_figures/SD_eval.png" alt="SD_eval" width="500px"/>
+<img src="preproc_mm_figures/SD_eval.png" alt="SD_eval" width="80%"/>
 
 Super Deduper only uses a small portion of the reads to identify duplicates.
-<img src="preproc_mm_figures/SD_performance.png" alt="SD_performance" width="500px"/>
+<img src="preproc_mm_figures/SD_performance.png" alt="SD_performance" width="80%"/>
 
 We calculated the Youden Index for every combination tested and the point that acquired the highest index value (as compared to Picard MarkDuplicates) occurred at a start position of 5bp and a length of 10bps (20bp total over both reads).
 

@@ -34,11 +34,11 @@ navigation:
 
   - heading: Data Reduction
   - title: Preprocessing raw data
-    url: data_reduction/htstream.md
+    url: data_reduction/htstream
   - title: Alignment with BWA
-    url: data_reduction/mapping.md
+    url: data_reduction/mapping
   - title: Variant calling using GATK
-    url: data_reduction/variant.md
+    url: data_reduction/variant
 
   - heading: Data Analysis
   - title: Data Analysis

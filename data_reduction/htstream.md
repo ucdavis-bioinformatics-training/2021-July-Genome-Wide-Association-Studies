@@ -1,4 +1,4 @@
-# Raw Data Preprocessing
+## Raw Data Preprocessing
 
 This document assumes [project_setup](./project_setup.md) has been completed.
 

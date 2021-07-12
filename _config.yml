@@ -32,7 +32,7 @@ navigation:
   - title: R
     url: base/r_prerequisites
 
-  - heading: Data Reduction and Analysis
+  - heading: Data Reduction
   - title: Preprocessing raw data
     url: data_reduction/htstream.md
   - title: Alignment with BWA

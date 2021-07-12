@@ -512,25 +512,12 @@ squeue -u $USER  # use your username
 
 Beyond generating "better" data for downstream analysis, cleaning statistics also give you an idea as to the original quality and complexity of the sample, library generation, and sequencing quality.
 
-The first step in this process is to talk with your sequencing provider to ask about run level quality metrics. The major sequencing platforms all provide quality metrics that can provide insight into whether things might have gone wrong during library preparation or sequencing. Sequencing providers often generate reports and provide them along with the sequencing data.
+This can help inform you of how you might change your procedures in the future, either sample preparation, or in library preparation.
 
-### BaseSpace Plots for Illumina data
+I’ve found it best to perform QA/QC on both the run as a whole (poor samples can affect other samples) and on the samples themselves as they compare to other samples (BE CONSISTENT).
 
-<img src="preproc_mm_figures/good_run.png" alt="good" width="100%"/>
-
-A nice run showing fairly random distribution of bases per cycle, > 80% bases above Q30, good cluster density and high pass filter rate, and very little drop off in read quality even at the end of the read.  
-
-
-
-<img src="preproc_mm_figures/bad_run_PDs.png" alt="bad" width="100%"/>
-A poor run showing less base diversity, only 39% bases above Q30, potentially too high cluster density and low pass filter rate, and extreme drop off in read quality after ~100bp of R1, and an even worse profile in R2.  
-
-Results like those above can help inform you of how you might change your protocol/procedures in the future, either sample preparation (RNA extraction), or in library preparation.  
-
-The next step is to consider quality metrics for each sample. The key consideration is that **(SAMPLES SHOULD BE CONSISTENT!)**. Plots of the preprocessing summary statistics are a great way to look for technical bias and batch effects within your experiment. Poor quality samples often appear as outliers and can ethically be removed due to identified technical issues.  
-
-The JSON files output by HTStream provide this type of information.
-
+Reports such as Basespace for Illumina, are great ways to evaluate the run as a whole, the sequencing provider usually does this for you.
+PCA/MDS plots of the preprocessing summary are a great way to look for technical bias across your experiment. Poor quality samples often appear as outliers on the MDS plot and can ethically be removed due to identified technical issues.
 
 
 ### <font color='red'> Begin Group Exercise 3 </font>
@@ -569,8 +556,6 @@ The JSON files output by HTStream provide this type of information.
     du -sh *
     ```
 
-    *All of the samples started with the same number of reads. What can you tell from the file sizes about how cleaning went across the samples?*
-
     **IF for some reason HTStream didn't finish, the files are corrupted or you missed the session, please let one of us know and we will help. You can also copy over the HTStream output.**
 
     ```bash
@@ -581,7 +566,7 @@ The JSON files output by HTStream provide this type of information.
 
     ```bash
     cd /share/workshop/gwas_workshop/$USER/gwas_example
-    zless 00-RawData/mouse_110_WT_C/mouse_110_WT_C.R1.fastq.gz
+    zless 00-RawData/SL378587_S1_L001_R1_001.fastq.gz
     ```
 
     Let's search for the adapter sequence. Type '/' (a forward slash), and then type **AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC** (the first part of the forward adapter). Press Enter. This will search for the sequence in the file and highlight each time it is found. You can now type "n" to cycle through the places where it is found. When you are done, type "q" to exit.
@@ -589,7 +574,7 @@ The JSON files output by HTStream provide this type of information.
     Now look at the output file:
 
     ```bash
-    zless 01-HTS_Preproc/mouse_110_WT_C/mouse_110_WT_C_R1.fastq.gz
+    zless 01-HTS_Preproc/SL378587/SL378587.htstream_R1.fastq.gz
     ```
 
     If you scroll through the data (using the spacebar), you will see that some of the sequences have been trimmed. Now, try searching for **AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC** again. You shouldn't find it (adapters were trimmed remember), but rarely is anything perfect. You may need to use Control-C to get out of the search and then "q" to exit the 'less' screen.
@@ -597,43 +582,27 @@ The JSON files output by HTStream provide this type of information.
     Lets grep for the sequence and get an idea of where it occurs in the raw sequences:
 
     ```bash
-    zcat  00-RawData/mouse_110_WT_C/mouse_110_WT_C.R1.fastq.gz | grep --color=auto  AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+    zcat  00-RawData/SL378587_S1_L001_R1_001.fastq.gz | grep --color=auto  AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
     ```
 
     * *What do you observe? Are these sequences useful for analysis?*
 
     ```bash
-    zcat  01-HTS_Preproc/mouse_110_WT_C/mouse_110_WT_C_R1.fastq.gz | grep --color=auto  AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+    zcat  01-HTS_Preproc/SL378587/SL378587.htstream_R1.fastq.gz | grep --color=auto  AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
     ```
 
 
     Lets grep for the sequence and count occurrences
 
     ```bash
-    zcat  00-RawData/mouse_110_WT_C/mouse_110_WT_C.R1.fastq.gz | grep  AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC | wc -l
-    zcat  01-HTS_Preproc/mouse_110_WT_C/mouse_110_WT_C_R1.fastq.gz | grep  AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC | wc -l
+    zcat  00-RawData/SL378587_S1_L001_R1_001.fastq.gz | grep AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC | wc -l
+    zcat  01-HTS_Preproc/SL378587/SL378587.htstream_R1.fastq.gz | grep AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC | wc -l
     ```
 
     * *What is the reduction in adapters found?*
 
     * *How could you modify the cleaning pipeline in order to remove the remaining sequences?*
 
-
-Primer dimers in this dataset:
-
-<img src="preproc_mm_figures/primer_dimers.png" alt="PrimerDimer" width="80%"/>
-
-
-* The set of "AAAA" bases directly adjacent to the Illumina adapter sequence are due to a spacing sequence on the flow cell.
-* The "GGGGG" sequences occur because the NovaSeq 6000 uses a 2-channel detection system, where the "G" base is the absence of signal. Once the polymerase reaches the end of the template + spacing sequence it stops, so all subsequent flow cycles produce no signal.
-
-
-<img src="preproc_mm_figures/sbs-redgreen-web-graphic.jpg" alt="PrimerDimer" width="80%"/>
-
-**Figure 2. 2-Channel SBS Imaging.**
-Accelerated detection of all 4 DNA bases is performed using only 2 images to capture red and green filter wavelength bands. A bases will be present in both images (yellow cluster), C bases in red only, T bases in green only, and G bases in neither.
-
-From [Illumina 2-Channel SBS Technology](https://www.illumina.com/science/technology/next-generation-sequencing/sequencing-technology/2-channel-sbs.html).
 
 
 --------
@@ -657,32 +626,4 @@ Or in case of emergency, download this copy: [HTSMultiQC-cleaning-report_multiqc
 
 ### <font color='red'> End Group Exercise 3 </font>
 
-<!--
-    I've created a small R script to read in each json file, pull out some relevant stats and write out a table for all samples.
 
-    ```/bash
-    cd /share/workshop/gwas_workshop/$USER/gwas_example  # We'll run this from the main directory
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2021-June-RNA-Seq-Analysis/master/software_scripts/scripts/summarize_stats.R
-
-    module load R
-    R CMD BATCH summarize_stats.R
-    cat summary_hts.txt
-    ```
-
-    Transfer summarize_stats.txt to your computer using scp or winSCP, or copy/paste from cat [sometimes doesn't work],  
-
-    For scp try, In a new shell session on your laptop. **NOT logged into tadpole**.
-
-    ```bash
-    mkdir ~/rnaseq_workshop
-    cd ~/rnaseq_workshop
-    scp your_username@tadpole.genomecenter.ucdavis.edu:/share/workshop/your_username/gwas_example/summary_hts.txt .
-    ```
-
-    Open in excel (or excel like application), you may have to move the header column 1 cell to the right, and lets review.
-
--->
-**Questions**
-* *Any problematic samples?*
-
-* *Anything else worth discussing?*

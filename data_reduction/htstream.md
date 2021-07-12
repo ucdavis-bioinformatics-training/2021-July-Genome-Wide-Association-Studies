@@ -155,6 +155,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
     ```
 
     <div class="output">
+    jli@barbera:/share/workshop/gwas_workshop/jli/gwas_example$ hts_Stats --help
     HTStream <https://github.com/s4hts/HTStream> application: hts_Stats
     Version: v1.3.3
     The hts_Stats app produce basic statistics about the reads in a dataset.

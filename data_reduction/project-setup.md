@@ -20,7 +20,7 @@ mkdir -p /share/workshop/gwas_workshop/$USER/gwas_example
     cd /share/workshop/gwas_workshop/$USER/gwas_example
     mkdir 00-RawData
     cd 00-RawData/
-    ln -s /share/workshop/gwas_workshop/jli/gwas_example/00-RawData/* .
+    cp /share/workshop/gwas_workshop/jli/gwas_example/00-RawData/* .
     ```
 
     This directory now contains the fastq files for all three samples that we are going to use.

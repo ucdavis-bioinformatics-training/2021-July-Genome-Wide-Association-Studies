@@ -191,9 +191,6 @@ When building a new pipeline, it is almost always a good idea to use a small sub
       -z [ --unmapped-output ] arg          Output to unmapped sam file
     
     Application Specific Options:
-    
-    
-    Please report any issues, request for enhancement, or comments to <https://github.com/s4hts/HTStream/issues>
     </div>
 
     * *What version of hts_Stats is loaded?*
@@ -375,7 +372,7 @@ zcat SL378587_subset_R1.fastq.gz | grep TCTCGTATGCCGTCTTCTGCTTG
 
 ----
 
-### Q-window trimming.
+### Q-window trimming
 
 As a sequencing run progresses the quality scores tend to get worse. Quality scores are essentially a guess about the accuracy of a base call, so it is common to trim of the worst quality bases.
 

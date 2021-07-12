@@ -33,6 +33,8 @@ navigation:
     url: base/r_prerequisites
 
   - heading: Data Reduction
+  - title: Project setup
+    url: data_reduction/project-setup
   - title: Preprocessing raw data
     url: data_reduction/htstream
   - title: Alignment with BWA

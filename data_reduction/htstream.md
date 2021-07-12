@@ -195,8 +195,6 @@ When building a new pipeline, it is almost always a good idea to use a small sub
     Please report any issues, request for enhancement, or comments to <https://github.com/s4hts/HTStream/issues>
     </div>
 
-
-
     * *What version of hts_Stats is loaded?*
 
 

@@ -33,8 +33,14 @@ navigation:
     url: base/r_prerequisites
 
   - heading: Data Reduction and Analysis
-  - title: Data Reduction
-    url: data_reduction/GWAS
+  - title: Preprocessing raw data
+    url: data_reduction/htstream.md
+  - title: Alignment with BWA
+    url: data_reduction/mapping.md
+  - title: Variant calling using GATK
+    url: data_reduction/variant.md
+
+  - heading: Data Analysis
   - title: Data Analysis
     url: data_analysis/GWAS
 

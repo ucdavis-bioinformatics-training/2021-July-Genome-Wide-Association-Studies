@@ -1,5 +1,19 @@
-
 # Project Setup
+--------------------------------------------------------
+
+SNP arrays have been the most widely used genotyping technology in WGAS for decades, primarily due to their low costs. With the declining of sequencing cost, the switch to WGS is likely to be inevitable.
+
+<p align = "center">
+<img src="preproc_mm_figures/snparray.png" alt="comparison_technologies" width="80%"/>
+</p>
+
+<p align = "center" style="font-family:Times;font-size:15px;">
+https://www.nature.com/articles/s41576-019-0127-1
+</p>
+
+---
+
+In this workshop, we are going to focus on using WGS data.
 
 Let's set up a project directory for the week, and talk a bit about project philosophy..
 

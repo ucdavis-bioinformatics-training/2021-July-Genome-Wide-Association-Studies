@@ -11,6 +11,8 @@ SNP arrays have been the most widely used genotyping technology in WGAS for deca
 https://www.nature.com/articles/s41576-019-0127-1
 </p>
 
+**For those who are interested in learning the process of using SNP array data for GWAS studies, please read this paper as a starting point: https://www.nature.com/articles/s41576-019-0127-1**
+
 ---
 
 In this workshop, we are going to focus on using WGS data.

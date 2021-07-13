@@ -38,7 +38,7 @@ navigation:
   - title: Preprocessing raw data
     url: data_reduction/htstream
   - title: Alignment with BWA
-    url: data_reduction/mapping
+    url: data_reduction/alignment
   - title: Variant calling using GATK
     url: data_reduction/variant
 

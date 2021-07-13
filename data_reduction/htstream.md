@@ -7,7 +7,7 @@ SNP arrays have been the most widely used genotyping technology in WGAS for deca
 <img src="preproc_mm_figures/snparray.png" alt="comparison_technologies" width="80%"/>
 </p>
 
-<p align = "center" style="font-family:Times;font-size:10px;">
+<p align = "center" style="font-family:Times;font-size:15px;">
 https://www.nature.com/articles/s41576-019-0127-1
 </p>
 

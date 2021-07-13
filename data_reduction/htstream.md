@@ -1,6 +1,10 @@
 ## Raw Data Preprocessing
 -------------------------------------------------------
 
+SNP arrays have been the most widely used genotyping technology in WGAS for decades, primarily due to their low costs. With the declining of sequencing cost, the switch to WGS is likely to be inevitable.
+
+<img src="preproc_mm_figures/snparray.png" alt="comparison_technologies" width="80%"/>
+
 In this section, we will use HTStream to carry out data preprocessing.
 
 <img src="preproc_mm_figures/WF1.png" alt="analysis_flowchart" width="60%"/>

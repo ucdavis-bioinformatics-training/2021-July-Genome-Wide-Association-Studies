@@ -7,11 +7,11 @@ In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our t
 
 ---
 
-**1\.** First go back to your variant_example directory and create a new directory called '02-Alignment':
+**1\.** First go back to your gwas_example directory and create a new directory called '03-Alignment':
 
-    cd /share/workshop/<your username>/variant_example
-    mkdir 02-Alignment
-    cd 02-Alignment
+    cd /share/workshop/gwas_workshop/$USER/gwas_example
+    mkdir 03-Alignment
+    cd 03-Alignment
 
 Link to the files we will be using for alignment:
 

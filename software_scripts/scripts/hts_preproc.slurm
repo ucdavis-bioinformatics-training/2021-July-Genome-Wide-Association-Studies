@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --nodes=1
-#SBATCH --ntasks=9
+#SBATCH --ntasks=8
 #SBATCH --time=60:00
 #SBATCH --mem=4000 # Memory pool for all cores (see also --mem-per-cpu)
 #SBATCH --partition=production

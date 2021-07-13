@@ -3,7 +3,7 @@
 
 SNP arrays have been the most widely used genotyping technology in WGAS for decades, primarily due to their low costs. With the declining of sequencing cost, the switch to WGS is likely to be inevitable.
 
-<img src="preproc_mm_figures/snparray.png" alt="comparison_technologies" width="80%"/>
+<img src="preproc_mm_figures/snparray.png" title="https://www.nature.com/articles/s41576-019-0127-1" alt="comparison_technologies" width="80%"/>
 
 In this section, we will use HTStream to carry out data preprocessing.
 

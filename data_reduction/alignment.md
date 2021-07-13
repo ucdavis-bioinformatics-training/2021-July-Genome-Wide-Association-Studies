@@ -3,7 +3,7 @@
 
 In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our trimmed reads to the reference genome. Then, we will visualize the alignments using IGV.
 
-![fc03](fc03.png)
+<img src="preproc_mm_figures/WF2.png" alt="analysis_flowchart" width="60%"/>
 
 ---
 

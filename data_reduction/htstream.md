@@ -3,7 +3,7 @@
 
 In this section, we will use HTStream to carry out data preprocessing.
 
-![wf01](preproc_mm_figures/WF1.png)
+<img src="preproc_mm_figures/WF1.png" alt="analysis_flowchart" width="60%"/>
 
 ---
 

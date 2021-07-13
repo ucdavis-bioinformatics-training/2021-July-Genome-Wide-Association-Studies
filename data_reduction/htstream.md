@@ -1,4 +1,11 @@
 ## Raw Data Preprocessing
+-------------------------------------------------------
+
+In this section, we will use HTStream to carry out data preprocessing.
+
+![wf01](preproc_mm_figures/WF1.png)
+
+---
 
 This document assumes [project_setup](./project_setup.md) has been completed.
 

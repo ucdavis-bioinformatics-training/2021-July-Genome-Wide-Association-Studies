@@ -7,12 +7,13 @@ SNP arrays have been the most widely used genotyping technology in WGAS for deca
 <img src="preproc_mm_figures/snparray.png" alt="comparison_technologies" width="80%"/>
 </p>
 
-<p align = "center">
 <p align = "center" style="font-family:Times;font-size:10px;">
 https://www.nature.com/articles/s41576-019-0127-1
 </p>
 
-In this section, we will use HTStream to carry out data preprocessing.
+---
+
+In this workshop, we are going to focus on using WGS data. In this section, we will use HTStream to carry out data preprocessing.
 
 <img src="preproc_mm_figures/WF1.png" alt="analysis_flowchart" width="60%"/>
 

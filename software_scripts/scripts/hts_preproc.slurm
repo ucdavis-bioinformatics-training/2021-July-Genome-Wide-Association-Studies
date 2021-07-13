@@ -17,7 +17,7 @@ aklog
 sample=`sed "${SLURM_ARRAY_TASK_ID}q;d" samples.txt`
 echo "SAMPLE: ${sample}"
 
-outpath="/share/workshop/gwas_workshop/$USER/01-HTS_Preproc"
+outpath="/share/workshop/gwas_workshop/$USER/gwas_example/01-HTS_Preproc"
 echo "OUTPUT DIR: ${outpath}"
 [[ -d ${outpath} ]] || mkdir -p ${outpath}
 [[ -d ${outpath}/${sample} ]] || mkdir -p ${outpath}/${sample}
@@ -25,7 +25,7 @@ echo "OUTPUT DIR: ${outpath}"
 
 module load htstream
 
-call="hts_Stats -N 'RawReads stats' -L ${outpath}/${sample}/${sample}_htsStats.json -1 ../00-RawData/${sample}_*R1* -2 ../00-RawData/${sample}_*R2* | \
+call="hts_Stats -N 'RawReads stats' -L ${outpath}/${sample}/${sample}_htsStats.json -1 00-RawData/${sample}_*R1* -2 00-RawData/${sample}_*R2* | \
       hts_SeqScreener -N 'screen phix' -A ${outpath}/${sample}/${sample}_htsStats.json | \
       hts_SuperDeduper -N 'remove PCR duplicates' -e 2000 -A ${outpath}/${sample}/${sample}_htsStats.json | \
       hts_AdapterTrimmer -N 'trim adapters' -A ${outpath}/${sample}/${sample}_htsStats.json | \

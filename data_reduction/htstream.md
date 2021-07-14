@@ -197,7 +197,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
 
 
 
-    * *What version of hts_Stats is loaded?*
+* *What version of hts_Stats is loaded?*
 
 
 1. Now lets run ```hts_Stats``` and look at the output.

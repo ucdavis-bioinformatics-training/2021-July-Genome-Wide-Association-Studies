@@ -40,7 +40,7 @@ Preprocessing also produces a number of statistics about the samples. These can 
 <img src="preproc_mm_figures/preproc_flowchart.png" alt="preproc_flowchart" width="80%"/>
 
 
-In order to better understand and preprocess an RNA-seq data set (and to determine the types of problems we might encounter), it is a good idea to learn what type of library prep kit was used, and how it works.
+In order to better understand and preprocess our data set (and to determine the types of problems we might encounter), it is a good idea to learn what type of library prep kit was used, and how it works.
 
 
 1. Remove contaminants (at least PhiX).
@@ -315,7 +315,7 @@ For variant analysis (any mapping based technique) it is not critical to remove,
 
 ### Removing PCR duplicates with hts_SuperDeduper.
 
-Removing duplicates is standard practice in variant analysis. Removing PCR duplicates can be **controversial** for RNAseq, but I'm in favor of it. It tells you alot about the original complexity of each sample and potential impact of sequencing depth.
+Removing duplicates is standard practice in variant analysis. It tells you alot about the original complexity of each sample and potential impact of sequencing depth.
 
 **However, I would never do PCR duplicate removal on single-end reads**
 <img src="preproc_mm_figures/SD_eval.png" alt="SD_eval" width="80%"/>

@@ -7,6 +7,13 @@ In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our t
 
 ---
 
+1. Aligning/Mapping vs Assembly
+1. Aligners/Mappers
+1. Mapping against the genome
+1. Alignments
+1. Quality Assurance - Mapping statistics as QA/QC.
+
+
 **1\.** First go back to your gwas_example directory and create a new directory called '03-Alignment':
 
     cd /share/workshop/gwas_workshop/$USER/gwas_example

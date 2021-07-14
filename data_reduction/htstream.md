@@ -192,7 +192,10 @@ When building a new pipeline, it is almost always a good idea to use a small sub
       -z [ --unmapped-output ] arg          Output to unmapped sam file
     
     Application Specific Options:
-    </div>
+    </div>  
+
+
+
 
     * *What version of hts_Stats is loaded?*
 

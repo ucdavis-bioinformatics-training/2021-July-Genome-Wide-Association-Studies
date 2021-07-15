@@ -72,7 +72,9 @@ Many [alignment algorithms](https://en.wikipedia.org/wiki/List_of_sequence_align
   * MapSplice
 
 ---
+
 ## Alignments
+
 ### Reference genome
 
 Genome sequence fasta file should be identified at the beginning of the analysis.
@@ -88,6 +90,8 @@ Genome sequence fasta file should be identified at the beginning of the analysis
 * Alternative haplotype contigs should not be included in the reference, unless a ALT-aware mapper is used.
 
 [here](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.28_GRCh38.p13/GRCh38_major_release_seqs_for_alignment_pipelines/) is where one can find the proper version of human reference genome.
+
+---
 
 In this workshop, we are going to only use human chr22 as the reference and do not worry about the unplace, un-localized, alt or decoy sequences. This also reduces the size of our dataset so that the steps will finish relatively quickly.
 

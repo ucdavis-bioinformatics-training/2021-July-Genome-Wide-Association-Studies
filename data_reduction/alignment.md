@@ -19,7 +19,7 @@ In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our t
 
 - The focus is on the pieces, how they fit together.
 
-**Mapping** (or alignment to a reference) tries to put together the puzzle pieces directly onto an image of the picture._
+**Mapping** (or alignment to a reference) tries to put together the puzzle pieces directly onto an image of the picture.
 - The focus is on the puzzle, regions of the puzzle that contain certain characteristics (ex. what background) that will help you place the piece onto the puzzle.
 - In mapping the question is more, given a small chunk of sequence, where in the genome did this sequence most likely come from.
 - The goal then is to find the match(es) with either the “best” edit distance (smallest difference), or all matches with edit distance less than max edit distance. Main issues are:

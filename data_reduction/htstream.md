@@ -156,43 +156,43 @@ When building a new pipeline, it is almost always a good idea to use a small sub
     ```
 
     <div class="output">jli@barbera:/share/workshop/gwas_workshop/jli/gwas_example$ hts_Stats --help
-    HTStream <https://github.com/s4hts/HTStream> application: hts_Stats
-    Version: v1.3.3
-    The hts_Stats app produce basic statistics about the reads in a dataset.
-      Including the basepair composition and number of bases Q30.
-    
-    Standard Options:
-      -v [ --version ]                      Version print
-      -h [ --help ]                         Prints help documentation
-      -N [ --notes ] arg                    Notes for the stats JSON
-      -L [ --stats-file ] arg (=stats.json)  Write to stats file name
-      -A [ --append-stats-file ] arg        Append to stats file name
-    
-    Input Options [default: tab6 format on stdin]:
-      -1 [ --read1-input ] arg              Read 1 paired end fastq input <space 
-                                            separated for multiple files>
-      -2 [ --read2-input ] arg              Read 2 paired end fastq input <space 
-                                            separated for multiple files>
-      -U [ --singleend-input ] arg          Single end read fastq input <space 
-                                            separated for multiple files>
-      -I [ --interleaved-input ] arg        Interleaved fastq input <space 
-                                            separated for multiple files>
-      -T [ --tab-input ] arg                Tab-delimited (tab6) input <space 
-                                            separated for multiple files>
-    
-    hts_Stats Output Options [default: tab6 format to stdout]:
-      -F [ --force ]                        Forces overwrite of files
-      -u [ --uncompressed ]                 Output uncompressed (not gzipped) files
-      -f [ --fastq-output ] arg             Output to Fastq files <PE AND/OR SE 
-                                            files>
-      -i [ --interleaved-output ] arg       Output to interleaved fastq files 
-                                            <INTERLEAVED PE AND/OR SE files>
-      -t [ --tab-output ] arg               Output to tab-delimited (tab6) file
-      -z [ --unmapped-output ] arg          Output to unmapped sam file
-    
-    Application Specific Options:
+HTStream <https://github.com/s4hts/HTStream> application: hts_Stats
+Version: v1.3.3
+The hts_Stats app produce basic statistics about the reads in a dataset.
+  Including the basepair composition and number of bases Q30.
 
-    </div>  
+Standard Options:
+  -v [ --version ]                      Version print
+  -h [ --help ]                         Prints help documentation
+  -N [ --notes ] arg                    Notes for the stats JSON
+  -L [ --stats-file ] arg (=stats.json)  Write to stats file name
+  -A [ --append-stats-file ] arg        Append to stats file name
+
+Input Options [default: tab6 format on stdin]:
+  -1 [ --read1-input ] arg              Read 1 paired end fastq input <space 
+                                        separated for multiple files>
+  -2 [ --read2-input ] arg              Read 2 paired end fastq input <space 
+                                        separated for multiple files>
+  -U [ --singleend-input ] arg          Single end read fastq input <space 
+                                        separated for multiple files>
+  -I [ --interleaved-input ] arg        Interleaved fastq input <space 
+                                        separated for multiple files>
+  -T [ --tab-input ] arg                Tab-delimited (tab6) input <space 
+                                        separated for multiple files>
+
+hts_Stats Output Options [default: tab6 format to stdout]:
+  -F [ --force ]                        Forces overwrite of files
+  -u [ --uncompressed ]                 Output uncompressed (not gzipped) files
+  -f [ --fastq-output ] arg             Output to Fastq files <PE AND/OR SE 
+                                        files>
+  -i [ --interleaved-output ] arg       Output to interleaved fastq files 
+                                        <INTERLEAVED PE AND/OR SE files>
+  -t [ --tab-output ] arg               Output to tab-delimited (tab6) file
+  -z [ --unmapped-output ] arg          Output to unmapped sam file
+
+Application Specific Options:
+
+</div>  
 
     * *What version of hts_Stats is loaded?*
 

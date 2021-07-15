@@ -44,8 +44,11 @@ In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our t
   * [From biostars](https://www.biostars.org/p/119537/)
 
 <img style="padding-left:100px" src="alignment_mm_figures/alignment_figure3.png" alt="alignment_figure3" width="60%"/>
+
 * Inner length, insert size, fragment length
+
 <img src="alignment_mm_figures/alignment_figure4.jpg" alt="alignment_figure4" width="60%"/>
+
 *From [This Biostars answer](https://www.biostars.org/p/106291/)*
 
 #### Considerations when mapping

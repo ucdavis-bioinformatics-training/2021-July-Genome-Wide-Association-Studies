@@ -237,18 +237,15 @@ echo $runtime
 </div>
 
 
-Once you have done that, then use sbatch to run this script for the rest of the samples:
+Once we have understood what the script is doing, we can submit it to the cluster for computing:
 
-    sbatch bwa.slurm A9004
-    sbatch bwa.slurm A9006
-    sbatch bwa.slurm A9014
-    sbatch bwa.slurm A9018
+    sbatch -J bwa.${USER} bwa.slurm
 
-This should take about 10 minutes. Use 'squeue' to check on your processes:
+This should take less than 10 minutes to run. Use 'squeue' to check on your processes:
 
-    squeue -u <your user name>
+    squeue -u $USER
 
------
+---
 
 **7\.** Once this is done, let's take a look at the alignments using IGV. In order to do that, you will have to download the reference and alignment files to your laptop. Because the alignment files are too big to download easily, we are just going to look at a small portion of the alignment (our "Region of Interest", hence "ROI"). So, first, let's extract just a portion of the alignment from all of our samples using 'samtools view', but using a region of 1 megabase:
 

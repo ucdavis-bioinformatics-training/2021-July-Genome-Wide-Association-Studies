@@ -155,8 +155,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
     hts_Stats --help
     ```
 
-    <div class="output">
-    jli@barbera:/share/workshop/gwas_workshop/jli/gwas_example$ hts_Stats --help
+    <div class="output">jli@barbera:/share/workshop/gwas_workshop/jli/gwas_example$ hts_Stats --help
     HTStream <https://github.com/s4hts/HTStream> application: hts_Stats
     Version: v1.3.3
     The hts_Stats app produce basic statistics about the reads in a dataset.
@@ -192,8 +191,8 @@ When building a new pipeline, it is almost always a good idea to use a small sub
       -z [ --unmapped-output ] arg          Output to unmapped sam file
     
     Application Specific Options:
-    </div>  
 
+    </div>  
 
 
 
@@ -215,8 +214,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
     ls -lah
     ```
 
-    <div class="output">
-    total 400K
+    <div class="output">total 400K
     drwxrwsr-x 2 jli workshop   7 Jul 12 15:19 .
     drwxrwsr-x 9 jli workshop  11 Jul 12 15:16 ..
     -rw-rw-r-- 1 jli workshop 53K Jul 12 15:19 SL378587.stats.json

@@ -13,46 +13,109 @@ In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our t
 1. Alignments
 1. Quality Assurance - Mapping statistics as QA/QC.
 
+## Mapping vs Assembly
 
-**1\.** First go back to your gwas_example directory and create a new directory called '03-Alignment':
+**Assembly** seeks to put together the puzzle without knowing what the picture is.
+
+- The focus is on the pieces, how they fit together.
+
+**Mapping** (or alignment to a reference) tries to put together the puzzle pieces directly onto an image of the picture._
+- The focus is on the puzzle, regions of the puzzle that contain certain characteristics (ex. what background) that will help you place the piece onto the puzzle.
+- In mapping the question is more, given a small chunk of sequence, where in the genome did this sequence most likely come from.
+- The goal then is to find the match(es) with either the “best” edit distance (smallest difference), or all matches with edit distance less than max edit distance. Main issues are:
+* Large search space
+* Regions of similarity (aka repeats)
+* Gaps (INDELS)
+* Complexity (RNA, splicing, transcripts)
+
+### Alignment concepts
+
+* Multimappers:
+  * Reads that align equally well to more than one reference location.
+  * Generally, multimappers are discounted in variant detection, and are often discounted in counting applications (like RNA-Seq ... would “cancel” out anyway).
+  * Note: multimapper “rescue” in some algorithms (RSEM, Express?).
+* Duplicates:
+  * Reads or read pairs arising from the same original library fragment, during library preparation (PCR duplicates).
+  * Generally, duplicates can only be detected reliably with paired-end sequencing. If PE, they’re discounted in variant detection, and discounted in counting applications (like RNA-Seq).
+* Clipping vs Splicing
+  * soft-clipped: bases in 5' and 3' of the read are NOT part of the alignment.
+  * hard-clipped: bases in 5' and 3' of the read are NOT part of the alignment AND those bases have been
+  removed from the read sequence in the BAM file. The 'real' sequence length would be length(SEQ)+ count-of-hard-clipped-bases
+  * [From biostars](https://www.biostars.org/p/119537/)
+
+<img style="padding-left:100px" src="alignment_mm_figures/alignment_figure3.png" alt="alignment_figure3" width="60%"/>
+* Inner length, insert size, fragment length
+<img src="alignment_mm_figures/alignment_figure4.jpg" alt="alignment_figure4" width="60%"/>
+*From [This Biostars answer](https://www.biostars.org/p/106291/)*
+
+#### Considerations when mapping
+* Placing reads in regions that do not exist in the reference genome (reads extend off the end of linearized fragments) [ mitochondrial, plasmids, structural variants, etc.].
+* Sequencing errors and genetic variation: alignment between read and true source in genome may have more differences than alignment with some other copy of repeat.
+* What if the closest fully sequenced genome is too divergent?
+* Placing reads in repetitive regions: Some algorithms only return 1 mapping; If multiple: map quality = 0
+* Algorithms that use paired-end information => might prefer correct distance over correct alignment.
+
+---
+## Aligners/Mappers
+Many [alignment algorithms](https://en.wikipedia.org/wiki/List_of_sequence_alignment_software
+) to choose from. Examples include:
+* Aligners that can ’clip’
+  * bwa-mem
+  * Bowtie2 in local mode
+* Spliced Aligners
+  * STAR
+  * HiSAT2 (formerly Tophat [Bowtie2])
+  * GMAP/GSNAP
+  * SOAPsplice
+  * MapSplice
+
+
+### Reference genome
+
+Genome sequence fasta file should be identified at the beginning of the analysis.
+
+* Genome fasta files should include all chromosomes, unplaced sequences and un-localized sequences, as well as any organelles: primary assembly.
+
+* Should contain any contigs that represent patches.
+
+* Pseudoautosomal regions masked.
+
+* For variant calling purpose, a decoy sequence set could be added to improve mapping quality. The decoy sequences contain known true human sequences that are not in the reference genome. It will help to reduce the number of reads that would otherwise map with low quality in the reference. 
+
+* Alternative haplotype contigs should not be included in the reference, unless a ALT-aware mapper is used.
+
+[here](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.28_GRCh38.p13/GRCh38_major_release_seqs_for_alignment_pipelines/) is where one can find the proper version of human reference genome.
+
+In this workshop, we are going to only use human chr22 as the reference and do not worry about the unplace, un-localized, alt or decoy sequences. This also reduces the size of our dataset so that the steps will finish relatively quickly.
+
+1. First go to your gwas_example directory and make sure that a direcoty called "References" is created.
 
     cd /share/workshop/gwas_workshop/$USER/gwas_example
-    mkdir 03-Alignment
-    cd 03-Alignment
+    mkdir -p References
+    cd References
 
-Link to the files we will be using for alignment:
+Link to the chr22.fa file that I created:
 
-    ln -s ../01-HTS_Preproc/*/*.fastq.gz .
-    ls
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/chr22.fa .
+    ls -lh
 
------
 
-**2\.** Now, in order to align any data, we need a reference to align against. We have reduced the size of our dataset (by selecting only one chromosome) so that the steps will occur relatively quickly. We have also reduced the genome down to just one chromosome, so that the alignment steps will happen quickly. First, create a directory for the reference and then copy the reference:
+1. Once we have the reference genome, the first thing to do is to index it for the mapper/aligner.
 
-    cd /share/workshop/<your username>/variant_example
-    mkdir ref
-    cd ref
-    cp /share/biocore/workshops/Variant-Analysis-Workshop/ref/chr18.fa .
-
-Take a look at it:
-
-    less chr18.fa
-
-Press 'q' to quit out of less. We must index the reference to be able to align the data. Load the BWA module and look at the options:
-
+    cd /share/workshop/gwas_workshop/$USER/gwas_example/References
     module load bwa
-    bwa
-    bwa index
 
 Index the reference:
 
-    bwa index chr18.fa 
+    bwa index chr22.fa
 
 This will produce 5 files in the reference directory that BWA will use during the alignment phase.
 
 -----
 
-**3\.** Now, go back to your alignment directory and list the files:
+### Alignment
+
+1. Now, go back to your alignment directory and list the files:
 
     cd ../02-Alignment
     ls -l

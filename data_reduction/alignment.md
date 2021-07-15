@@ -95,26 +95,26 @@ Genome sequence fasta file should be identified at the beginning of the analysis
 
 In this workshop, we are going to only use human chr22 as the reference and do not worry about the unplace, un-localized, alt or decoy sequences. This also reduces the size of our dataset so that the steps will finish relatively quickly.
 
-1. First go to your gwas_example directory and make sure that a direcoty called "References" is created
+    1. First go to your gwas_example directory and make sure that a direcoty called "References" is created
 
-    cd /share/workshop/gwas_workshop/$USER/gwas_example  
-    mkdir -p References  
-    cd References  
+        cd /share/workshop/gwas_workshop/$USER/gwas_example  
+        mkdir -p References  
+        cd References  
 
-Link to the chr22.fa file that I created:
+    Link to the chr22.fa file that I created:
 
-    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/chr22.fa .
-    ls -lh
+        ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/chr22.fa .
+        ls -lh
 
 
-1. Once we have the reference genome, the first thing to do is to index it for the mapper/aligner
+    1. Once we have the reference genome, the first thing to do is to index it for the mapper/aligner
 
-    cd /share/workshop/gwas_workshop/$USER/gwas_example/References
-    module load bwa
+        cd /share/workshop/gwas_workshop/$USER/gwas_example/References
+        module load bwa
 
-Index the reference:
+    Index the reference:
 
-    bwa index chr22.fa
+        bwa index chr22.fa
 
 This will produce 5 files in the reference directory that BWA will use during the alignment phase.
 

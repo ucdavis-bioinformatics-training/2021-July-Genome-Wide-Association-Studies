@@ -95,10 +95,7 @@ Genome sequence fasta file should be identified at the beginning of the analysis
 
 In this workshop, we are going to only use human chr22 as the reference and do not worry about the unplace, un-localized, alt or decoy sequences. This also reduces the size of our dataset so that the steps will finish relatively quickly.
 
-```
-```
-
-1. First go to your gwas_example directory and make sure that a direcoty called "References" is created
+**1.** First go to your gwas_example directory and make sure that a direcoty called "References" is created
 
     cd /share/workshop/gwas_workshop/$USER/gwas_example  
     mkdir -p References  
@@ -109,7 +106,7 @@ Link to the chr22.fa file that I created:
     ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/chr22.fa .
     ls -lh
 
-1. Once we have the reference genome, the first thing to do is to index it for the mapper/aligner
+**2.** Once we have the reference genome, the first thing to do is to index it for the mapper/aligner
 
     cd /share/workshop/gwas_workshop/$USER/gwas_example/References
     module load bwa
@@ -124,7 +121,7 @@ This will produce 5 files in the reference directory that BWA will use during th
 
 ### Carry out alignment
 
-1. Now, go back to your alignment directory and list the files:
+**1.** Now, we are going to go through the alignment steps for one sample:
 
     cd ../02-Alignment
     ls -l
@@ -141,7 +138,7 @@ This step will take about 5 minutes to run.
 
 -----
 
-**4\.** Then, we need to convert the sam files into bam files for downstream processing. We will use a tool called 'samtools' to do this. Load the samtools module and take a look at the various subcommands and options:
+**2\.** Then, we need to convert the sam files into bam files for downstream processing. We will use a tool called 'samtools' to do this. Load the samtools module and take a look at the various subcommands and options:
 
     module load samtools
     samtools

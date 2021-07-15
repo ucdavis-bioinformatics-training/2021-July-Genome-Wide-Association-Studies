@@ -189,7 +189,7 @@ Take a look at it and understand what it's doing:
 
     cat bwa.slurm
 
-<div class="output")#!/bin/bash
+<div class="output">#!/bin/bash
 
 #SBATCH --nodes=1
 #SBATCH --ntasks=8

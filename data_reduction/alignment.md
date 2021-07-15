@@ -163,6 +163,22 @@ You can also use 'samtools flagstat' to get a summary of the alignment:
 
     samtools flagstat SL378587.sorted.bam
 
+    <div class="output">30482 + 0 in total (QC-passed reads + QC-failed reads)
+    152 + 0 secondary
+    0 + 0 supplementary
+    0 + 0 duplicates
+    30482 + 0 mapped (100.00% : N/A)
+    30330 + 0 paired in sequencing
+    15165 + 0 read1
+    15165 + 0 read2
+    30240 + 0 properly paired (99.70% : N/A)
+    30330 + 0 with itself and mate mapped
+    0 + 0 singletons (0.00% : N/A)
+    0 + 0 with mate mapped to a different chr
+    0 + 0 with mate mapped to a different chr (mapQ>=5)
+    </div>
+
+
 ---
 
 **4\.** In the next step, we will use another Slurm script to run all the alignment commands on all of the samples. First download the script:

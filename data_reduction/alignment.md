@@ -9,7 +9,6 @@ In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our t
 
 1. Aligning/Mapping vs Assembly
 1. Aligners/Mappers
-1. Mapping against the genome
 1. Alignments
 1. Quality Assurance - Mapping statistics as QA/QC.
 
@@ -72,6 +71,9 @@ Many [alignment algorithms](https://en.wikipedia.org/wiki/List_of_sequence_align
   * SOAPsplice
   * MapSplice
 
+---
+
+## Alignments
 
 ### Reference genome
 
@@ -116,7 +118,7 @@ This will produce 5 files in the reference directory that BWA will use during th
 
 -----
 
-### Alignment
+### Carry out alignment
 
 1. Now, go back to your alignment directory and list the files:
 

@@ -72,9 +72,7 @@ Many [alignment algorithms](https://en.wikipedia.org/wiki/List_of_sequence_align
   * MapSplice
 
 ---
-
 ## Alignments
-
 ### Reference genome
 
 Genome sequence fasta file should be identified at the beginning of the analysis.
@@ -116,7 +114,7 @@ Index the reference:
 
 This will produce 5 files in the reference directory that BWA will use during the alignment phase.
 
------
+---
 
 ### Carry out alignment
 

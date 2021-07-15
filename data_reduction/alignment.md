@@ -121,18 +121,19 @@ This will produce 5 files in the reference directory that BWA will use during th
 
 ### Carry out alignment
 
-**1.** Now, we are going to go through the alignment steps for one sample:
+**1.** Now, we are going to go through the alignment steps for one sample (SL378587). We will create a test directory for this purpose.
 
-    cd ../02-Alignment
-    ls -l
+    cd /share/workshop/gwas_workshop/$USER/gwas_example
+    mkdir -p BWA_testing
+    cd BWA_testing
 
-You should see 5 sets of files, one for each sample. Each set should contain two paired-end reads (R1 & R2), and a single-end reads file. So, let's start by running bwa on the first sample. We will be using the 'bwa mem' subcommand with our files. Take a look at the options:
+We will be using the 'mem' algorithm under BWA to carry out the alignments. First, let's take a look at the help manual:
 
-    bwa mem
+    bwa mem --help
     
 Note that the Usage shows that we need to give bwa a location for the 'idxbase', which is the path to the reference. Now, we will align the two paired-end files and redirect the alignment output (in SAM format) to a file. We will use 4 threads (processors) and add read group (i.e sample ID) information to the alignment:
 
-    bwa mem -t 6 -R "@RG\tID:A8100\tSM:A8100" ../ref/chr18.fa A8100_R1.fastq.gz A8100_R2.fastq.gz > A8100.chr18.all.sam
+    bwa mem -t 8 -R "@RG\tID:SL378587\tSM:SL378587" ../References/chr22.fa ../01-HTS_Preproc/SL378587/SL378587.htstream_R1.fastq.gz ../01-HTS_Preproc/SL378587/SL378587.htstream_R2.fastq.gz > SL378587.sam
 
 This step will take about 5 minutes to run.
 

@@ -285,46 +285,16 @@ After loading all 3 alignments, however, you will not see anything until you zoo
 
 ---
 
-**8\.** 
+**8\.** Now you can see all the alignments. Within each alignment, each colored bar represents a read. Clicking on a specific read will give you a popup with detailed information about that read. The colors (by default) are based on the pair-orientation for paired-end reads. You can change this (and other properties) of the tracks by clicking the setting wheel at the top-right corner of each bam track. For example, choosing "Squished" gives a more compact representation of the alignment. Play around with the various options to see how things change.
 
-![igv7](igv07.png)
+---
 
-For the Input File, choose **A8100.chr18.ROI.bam**:
+**9\.** I would like to introduce a tool: qualimap, which takes sorted bam files as input and output many metrics that may point to potential problems. Two slurm scripts can be run to produce both single sample summaries, as well as multiple samples report.
 
-![igv8](igv08.png)
+    cd /share/workshop/gwas_workshop/$USER/gwas_example
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/qualimap_single.slurm
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/qualimap_multi.slurm
 
-The Output File will be automatically filled in. Choose 10 for the "Zoom Levels". Click "Run":
+Once the jobs are done, we can download the html files and the corresponding images_* directories to our local machine for visualization. [here](multisampleBamQcReport.html) is the multiple sample report I produced.
 
-![igv9](igv09.png)
 
------
-
-**12\.** Once that finishes, close igvtools. In the main window, choose "File" and "Load from File". Choose the **A8100.chr18.ROI.bam.tdf** file that was created from igvtools:
-
-![igv10](igv10.png)
-
-Create coverage tracks like this for all the other samples.
-
------
-
-**13\.** Now you should be able to see coverage for each sample across the entire reference. Since we extracted only 1Mb of data for each sample, you will only see coverage in that region. Zoom in to that region be clicking and dragging across the number line at the top:
-
-![igv11](igv11.png)
-
-This is still too large a region to view individual alignments, so let's go to the region from the paper. In the text box at the top enter this region: **chr18:54607572-54638829**. Press "Go":
-
-![igv12](igv12.png)
-
-Zoom further into the region:
-
-![igv13](igv13.png)
-
------
-
-**14\.** Now you can see all the alignments. Within each alignment, each colored bar represents a read. The colors (by default) are based on the strand of the read. You can change this (and other properties) of the tracks by right-clicking (or the equivalent for your laptop) on the track name. For example, choosing "Squished" gives a more compact representation of the alignment. Play around with the various options to see how things change.
-
-![igv14](igv14.png)
-
-Clicking on a specific read will give you a popup with detailed information about that read:
-
-![igv15](igv15.png)

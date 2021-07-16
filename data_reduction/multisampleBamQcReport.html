@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/agogo.css" type="text/css" />
+		<link rel="stylesheet" href="css/report.css" type="text/css" />
+	<title>Qualimap report: Multi-sample BAM QC</title>
+
+	</head>
+<body>
+	<div class="header-wrapper">
+		<div class="header">
+		<p class="logo"><a href="http://qualimap.bioinfo.cipf.es/">
+		<img class="logo" src="css/qualimap_logo_small.png" alt="Logo"/>
+		</a></p>
+<div class="headertitle"><a href="">Qualimap Report: Multi-sample BAM QC</a></div>
+	</div>
+</div>
+
+<div class="content-wrapper">
+<div class="content">
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class=section>
+<h2>Input data and parameters<a class="headerlink" name="input" title="Permalink to this headline">&nbsp;</a></h2>
+<div class=summary>
+
+
+<div class=table-summary>
+<h3>Samples</h3>
+<table class="summary hovertable">
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>SL378589</td>
+<td class=column2>/share/workshop/gwas_workshop/jli/gwas_example/04-Qualimap/SL378589</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>SL378588</td>
+<td class=column2>/share/workshop/gwas_workshop/jli/gwas_example/04-Qualimap/SL378588</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>SL378587</td>
+<td class=column2>/share/workshop/gwas_workshop/jli/gwas_example/04-Qualimap/SL378587</td>
+</tr>
+</table>
+</div>
+
+</div>
+</div> <!-- summary section -->
+
+<div class=section>
+<h2>Summary<a class="headerlink" name="summary" title="Permalink to this headline">&nbsp;</a></h2>
+<div class=summary>
+
+
+<div class=table-summary>
+<h3>Globals</h3>
+<table class="summary hovertable">
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>Number of samples</td>
+<td class=column2>3</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>Total number of mapped reads</td>
+<td class=column2>99,413</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>Mean samples coverage</td>
+<td class=column2>0.09</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>Mean samples GC-content</td>
+<td class=column2>38.15</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>Mean samples mapping quality</td>
+<td class=column2>0.65</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td class=column1>Mean samples insert size</td>
+<td class=column2>334</td>
+</tr>
+</table>
+</div>
+
+
+<div class=table-summary>
+<h3>Sample statistics</h3>
+<table class="summary hovertable">
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td><b>Sample name</b></td>
+<td><b>Coverage mean</b></td>
+<td><b>Coverage std</b></td>
+<td><b>GC percentage</b></td>
+<td><b>Mapping quality mean</b></td>
+<td><b>Insert size median</b></td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td>SL378587</td>
+<td>0.0862</td>
+<td>1.6714</td>
+<td>37.59</td>
+<td>0.742</td>
+<td>314.0</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td>SL378588</td>
+<td>0.12</td>
+<td>2.2371</td>
+<td>38.45</td>
+<td>0.5914</td>
+<td>345.0</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#EEEEEC';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+<td>SL378589</td>
+<td>0.0782</td>
+<td>1.4704</td>
+<td>38.41</td>
+<td>0.6167</td>
+<td>343.0</td>
+</tr>
+</table>
+</div>
+
+</div>
+</div> <!-- summary section -->
+
+
+
+<div class=section>
+
+<h2>PCA<a class="headerlink" name="PCA" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/PCA.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Coverage Across Reference<a class="headerlink" name="Coverage across reference" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Coverage across reference.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Coverage Histogram (0 - 197X)<a class="headerlink" name="Coverage Histogram (0 - 197X)" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Coverage Histogram (0 - 197X).png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Global Coverage Histogram<a class="headerlink" name="Global Coverage Histogram" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Global Coverage Histogram.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Genome Fraction Coverage<a class="headerlink" name="Genome Fraction Coverage" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Genome Fraction Coverage.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Duplication Rate Histogram<a class="headerlink" name="Duplication Rate Histogram" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Duplication Rate Histogram.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Mapped reads GC-content<a class="headerlink" name="Mapped reads GC-content" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Mapped reads GC-content.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Mapped Reads Clipping Profile<a class="headerlink" name="Mapped Reads Clipping Profile" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Mapped Reads Clipping Profile.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Mapped Reads GC-content Distribution<a class="headerlink" name="Mapped Reads GC-content Distribution" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Mapped Reads GC-content Distribution.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Mapping Quality Across Reference<a class="headerlink" name="Mapping Quality Across Reference" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Mapping Quality Across Reference.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Mapping Quality Histogram<a class="headerlink" name="Mapping Quality Histogram" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Mapping Quality Histogram.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Insert Size Across Reference<a class="headerlink" name="Insert Size Across Reference" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Insert Size Across Reference.png"></div>
+
+</div><!-- graph section -->
+
+
+<div class=section>
+
+<h2>Insert Size Histogram<a class="headerlink" name="Insert Size Histogram" title="Permalink to this headline">&nbsp;</a></h2>
+
+<div><img width=100% src="images_multisampleBamQcReport/Insert Size Histogram.png"></div>
+
+</div><!-- graph section -->
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="sidebar">
+<h3>Contents</h3>
+<li class="toctree-l1"><a class="reference internal" href="#input">Input data & parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#PCA">PCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Coverage across reference">Coverage Across Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Coverage Histogram (0 - 197X)">Coverage Histogram (0 - 197X)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Global Coverage Histogram">Global Coverage Histogram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Genome Fraction Coverage">Genome Fraction Coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Duplication Rate Histogram">Duplication Rate Histogram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Mapped reads GC-content">Mapped reads GC-content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Mapped Reads Clipping Profile">Mapped Reads Clipping Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Mapped Reads GC-content Distribution">Mapped Reads GC-content Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Mapping Quality Across Reference">Mapping Quality Across Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Mapping Quality Histogram">Mapping Quality Histogram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Insert Size Across Reference">Insert Size Across Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Insert Size Histogram">Insert Size Histogram</a></li>
+</div> <!-- sidebar -->
+
+<div class="clearer"></div>
+</div>
+
+</div>
+
+
+<div class="footer-wrapper">
+<div class="footer">
+<div class="left">
+<div class="footer">
+2021/07/16 13:21:43
+</div>
+</div>
+<div class="right">
+<div class="footer">
+Generated by QualiMap v.2.2.1
+</div
+</div>
+<div class="clearer"></div>
+</div> <!-- footer -->
+</div>
+</body>

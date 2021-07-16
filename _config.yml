@@ -30,7 +30,7 @@ navigation:
   - title: CLI
     url: intro/command-line-intro
   - title: R
-    url: base/r_prerequisites
+    url: intro/Intro2R
 
   - heading: Data Reduction
   - title: Project setup

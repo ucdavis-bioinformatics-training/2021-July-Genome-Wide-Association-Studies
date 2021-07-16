@@ -1,0 +1,41 @@
+---
+title: "R for Biologist - An Introduction to R"
+author: "Bioinformatics Core"
+date: "`r format(Sys.Date())`"
+output:
+    html_document:
+        keep_md: TRUE
+---
+
+```{css echo=FALSE}
+.colsel {
+background-color: lightyellow;
+}
+```
+
+```{r echo=FALSE}
+library(knitr)
+colFmt = function(x,color){
+  outputFormat = opts_knit$get("rmarkdown.pandoc.to")
+  if(outputFormat == 'latex')
+    paste("\\textcolor{",color,"}{",x,"}",sep="")
+  else if(outputFormat == 'html')
+    paste("<font color='",color,"'>",x,"</font>",sep="")
+  else
+    x
+}
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(class.source = "colsel")
+```
+
+<P style="page-break-before: always">
+
+
+```{r, echo=FALSE}
+htmltools::includeHTML("embed_R.html")
+```
+
+

@@ -1,9 +1,9 @@
-## Alignment of High-Throughput Sequencing Data using BWA
+## Variant Discovery using GATK
 -------------------------------------------------------
 
-In this section, we will use BWA (Burrows-Wheeler Aligner) to align all of our trimmed reads to the reference genome. Then, we will visualize the alignments using IGV.
+In this section, we are going to use GATK to call short variants (SNPs + Indels)
 
-<img src="preproc_mm_figures/WF2.png" alt="analysis_flowchart" width="60%"/>
+<img src="gatk_figures/WF1.png" alt="analysis_flowchart" width="60%"/>
 
 ---
 

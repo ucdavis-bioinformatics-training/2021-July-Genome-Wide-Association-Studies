@@ -247,43 +247,35 @@ This should take less than 10 minutes to run. Use 'squeue' to check on your proc
 
 ---
 
-**7\.** Once this is done, let's take a look at the alignments using IGV. In order to do that, you will have to download the reference and alignment files to your laptop. Because the alignment files are too big to download easily, we are just going to look at a small portion of the alignment (our "Region of Interest", hence "ROI"). So, first, let's extract just a portion of the alignment from all of our samples using 'samtools view', but using a region of 1 megabase:
+**5\.** Once this is done, let's take a look at the alignments using IGV. In order to do that, you will have to download the reference and alignment files to our local machine.
 
-    samtools view -b A8100.chr18.sorted.bam chr18:54000000-55000000 > A8100.chr18.ROI.bam
-    samtools view -b A9004.chr18.sorted.bam chr18:54000000-55000000 > A9004.chr18.ROI.bam
-    samtools view -b A9006.chr18.sorted.bam chr18:54000000-55000000 > A9006.chr18.ROI.bam
-    samtools view -b A9014.chr18.sorted.bam chr18:54000000-55000000 > A9014.chr18.ROI.bam
-    samtools view -b A9018.chr18.sorted.bam chr18:54000000-55000000 > A9018.chr18.ROI.bam
+First, we have to index the fasta file for IGV. The following command accomplish that.
 
-And we have to index these new files:
+    cd /share/workshop/gwas_workshop/$USER/gwas_example/References
+    samtools faidx chr22.fa
 
-    samtools index A8100.chr18.ROI.bam
-    samtools index A9004.chr18.ROI.bam
-    samtools index A9006.chr18.ROI.bam
-    samtools index A9014.chr18.ROI.bam
-    samtools index A9018.chr18.ROI.bam
+Now we need to transfer the reference fasta, together with its index file and the bam files to our local computer.
 
-Download these bam files (and the .bai indices) to your laptop along with the reference file (chr18.fa).
+**For those who use Mac, a linux machine or Windows Power Shell, you may open a new terminal windown and use the following scp command to download the files. Do remember to change the _user.name_ to your user name on tadpole.**
 
------
+    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/$USER/gwas_example/References/chr22.fa .
+    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/$USER/gwas_example/References/chr22.fa.fai .
+    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/$USER/gwas_example/03-BWA/*/*.sorted.bam* .
+    pwd
 
-**8\.** Go to the [IGV page at the Broad Institute](http://software.broadinstitute.org/software/igv/) and click on Downloads.
+**For others, you may download [Filezilla](https://filezilla-project.org/), install it and then use it to transfer the files.**
 
-![igv1](igv01.png)
+---
 
-Scroll down the page and under "Java Web Start" click on the "Launch" button with 1.2Gb of memory. This will download a ".jnlp" file which will need to be run using Java Web Start (javaws). If you don't have this on your computer, you will need to install it.
+**6\.** It is very convenient to use the [IGV Web app](https://igv.org/app/) to visualize the alignment.
 
-![igv2](igv02.png)
+IGV should start up automatically. The first thing we want to do is load our reference (chr22.fa). Click on "Genomes" in the menu and choose "Local file":
 
------
+<img src="alignment_mm_figures/igv1.jpg" alt="igv_1" width="60%"/>
 
-**9\.** IGV should start up automatically. The first thing we want to do is load our reference (chr18.fa). Click on "Genomes" in the menu and choose "Load Genome from File":
+Find your genome file and its index file on your laptop and choose both of the file at the same time:
 
-![igv3](igv03.png)
-
-Find your genome file on your laptop and choose that:
-
-![igv4](igv04.png)
+<img src="alignment_mm_figures/igv2.jpg" alt="igv_2" width="60%"/>
 
 -----
 

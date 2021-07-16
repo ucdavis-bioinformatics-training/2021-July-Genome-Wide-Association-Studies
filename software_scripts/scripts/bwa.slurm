@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 #SBATCH --time=60:00
-#SBATCH --mem=10000 # Memory pool for all cores (see also --mem-per-cpu)
+#SBATCH --mem=4000 # Memory pool for all cores (see also --mem-per-cpu)
 #SBATCH --partition=production
 #SBATCH --array=1-3
 #SBATCH --output=slurmout/bwa_%A_%a.out # File to which STDOUT will be written
@@ -34,6 +34,17 @@ call="bwa mem -t 4 -R '@RG\tID:'${sample}'\tSM:'${sample} -M References/chr22.fa
 
 echo $call
 eval $call
+
+call="samtools flagstat ${outpath}/${sample}/${sample}.sorted.bam > ${outpath}/${sample}/${sample}_flagstat.log"
+
+echo $call
+eval $call
+
+call="samtools index ${outpath}/${sample}/${sample}.sorted.bam"
+
+echo $call
+eval $call
+
 
 end=`date +%s`
 runtime=$((end-start))

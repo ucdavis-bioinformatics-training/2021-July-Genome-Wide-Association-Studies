@@ -271,11 +271,11 @@ Now we need to transfer the reference fasta, together with its index file and th
 
 IGV should start up automatically. The first thing we want to do is load our reference (chr22.fa). Click on "Genomes" in the menu and choose "Local file":
 
-<img src="alignment_mm_figures/igv1.jpg" alt="igv_1" width="60%"/>
+<img src="alignment_mm_figures/igv1.png" alt="igv_1" width="60%"/>
 
 Find your genome file and its index file on your laptop and choose both of the file at the same time:
 
-<img src="alignment_mm_figures/igv2.jpg" alt="igv_2" width="60%"/>
+<img src="alignment_mm_figures/igv2.png" alt="igv_2" width="60%"/>
 
 -----
 

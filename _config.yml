@@ -40,7 +40,7 @@ navigation:
   - title: Alignment with BWA
     url: data_reduction/alignment
   - title: Variant calling using GATK
-    url: data_reduction/variant
+    url: data_reduction/variantcalling
 
   - heading: Data Analysis
   - title: Data Analysis

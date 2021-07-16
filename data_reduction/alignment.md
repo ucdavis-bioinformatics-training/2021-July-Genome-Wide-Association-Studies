@@ -269,7 +269,7 @@ Now we need to transfer the reference fasta, together with its index file and th
 
 **6\.** It is very convenient to use the [IGV Web app](https://igv.org/app/) to visualize the alignment.
 
-IGV should start up automatically. The first thing we want to do is load our reference (chr22.fa). Click on "Genomes" in the menu and choose "Local file":
+IGV should start up automatically. The first thing we want to do is load our reference (chr22.fa). Click on "Genome" in the menu and choose "Local File":
 
 <img src="alignment_mm_figures/igv1.png" alt="igv_1" width="60%"/>
 
@@ -279,17 +279,13 @@ Find your genome file and its index file on your laptop and choose both of the f
 
 -----
 
-**10\.** Now let's load all the alignments. Go to "File" and choose "Load from File":
+**7\.** Now let's load all the alignments. This can be done similarly as how we loaded the genome files, but using the "Tracks" tab and choose "Local File". **Note: alignments must be loaded one sample at a time; you must select both the bam file and its index .bai file at the same time for IGV to be able to load the alignment properly.**
 
-![igv5](igv05.png)
+After loading all 3 alignments, however, you will not see anything until you zoom in. The data was subsetted to cover the region of 10500000-10700000 on chr22. So, to be able to see anything, we must zoom in to this region first. Please see the screen shot below and the blue highlighted location is where we should specify our region of interest. After entering the correct coordinates, hit enter. This region is still to large for IGV to display any alignment. Now, you can draw a box along the coordinate labled ruler to zoom in further.
 
-Choose all of the ROI.bam files at once (use the \<Ctrl\> key to choose multiple):
+---
 
-![igv6](igv06.png)
-
------
-
-**11\.** This will load all of the alignment, however, you will not see anything until you zoom in. Before we do that, we are going to add coverage tracks that we can see at all zoom levels. Under "Tools" choose "Run igvtools":
+**8\.** 
 
 ![igv7](igv07.png)
 

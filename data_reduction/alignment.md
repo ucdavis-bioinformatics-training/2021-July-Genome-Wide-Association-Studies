@@ -271,17 +271,23 @@ Now we need to transfer the reference fasta, together with its index file and th
 
 IGV should start up automatically. The first thing we want to do is load our reference (chr22.fa). Click on "Genome" in the menu and choose "Local File":
 
-<img src="alignment_mm_figures/igv1.png" alt="igv_1" width="60%"/>
+<img src="alignment_mm_figures/igv1.png" alt="igv_1" width="80%"/>
 
 Find your genome file and its index file on your laptop and choose both of the file at the same time:
 
-<img src="alignment_mm_figures/igv2.png" alt="igv_2" width="60%"/>
+<img src="alignment_mm_figures/igv2.png" alt="igv_2" width="80%"/>
 
 -----
 
 **7\.** Now let's load all the alignments. This can be done similarly as how we loaded the genome files, but using the "Tracks" tab and choose "Local File". **Note: alignments must be loaded one sample at a time; you must select both the bam file and its index .bai file at the same time for IGV to be able to load the alignment properly.**
 
-After loading all 3 alignments, however, you will not see anything until you zoom in. The data was subsetted to cover the region of 10500000-10700000 on chr22. So, to be able to see anything, we must zoom in to this region first. Please see the screen shot below and the blue highlighted location is where we should specify our region of interest. After entering the correct coordinates, hit enter. This region is still to large for IGV to display any alignment. Now, you can draw a box along the coordinate labled ruler to zoom in further.
+After loading all 3 alignments, however, you will not see anything until you zoom in. The data was subsetted to cover the region of 10500000-10700000 on chr22. So, to be able to see anything, we must zoom in to this region first. Please see the screen shot below and the blue highlighted location is where we should specify our region of interest. After entering the correct coordinates, hit enter.
+
+<img src="alignment_mm_figures/igv3.png" alt="igv_3" width="80%"/>
+
+This region is still to large for IGV to display any alignment. Now, you can draw a box along the coordinate labled ruler to zoom in further.
+
+<img src="alignment_mm_figures/igv4.png" alt="igv_4" width="80%"/>
 
 ---
 

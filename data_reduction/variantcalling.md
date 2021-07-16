@@ -3,7 +3,13 @@
 
 In this section, we are going to use GATK to call short variants (SNPs + Indels)
 
+<p align = "center">
 <img src="gatk_figures/WF1.png" alt="analysis_flowchart" width="60%"/>
+</p>
+
+<p align = "center" style="font-family:Times;font-size:15px;">
+https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels-
+</p>
 
 ---
 

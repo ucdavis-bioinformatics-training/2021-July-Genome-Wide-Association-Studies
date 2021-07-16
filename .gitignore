@@ -1,1 +1,3 @@
 .idea*
+*.Rproj*
+*_site*

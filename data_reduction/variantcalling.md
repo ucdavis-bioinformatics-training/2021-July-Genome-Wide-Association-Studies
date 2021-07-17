@@ -53,10 +53,8 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-va
 
 This step is optional if you have done deduplication in read preprocessing step, as we have done using hts_SuperDeduper. The steps below serves as a helper if you need it in your own data analysis, where you do not do deduplication in the data preprocessing step.  
 
-   ```bash
-   cd /share/workshop/gwas_workshop/$USER/gwas_example
+   cd /share/workshop/gwas_workshop/$USER/gwas_example  
    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/picard.slurm  
-   ```
 
 
 You will have to modify the slurm script to fit your need.

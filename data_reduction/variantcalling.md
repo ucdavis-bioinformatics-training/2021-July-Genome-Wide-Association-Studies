@@ -1,4 +1,4 @@
-## Variant Discovery using GATK
+# Variant Discovery using GATK
 -------------------------------------------------------
 
 <img src="preproc_mm_figures/WF3.png" alt="analysis_flowchart" width="60%"/>
@@ -8,7 +8,7 @@
 
 ---
 
-### Variant analysis tools
+## Variant analysis tools
 
 There are many variant analysis tools available publicly, for different variant types, as well as using different approaches. Variant analysis tools are designed based on what sequencing data is available. Some of them do have modules available for multiple data types, such as DeepVariant. Even when we focus on the short read Illumina data, there are many tools available. Only seleted a few are listed below for demonstration purpose.
 
@@ -26,7 +26,7 @@ There are many variant analysis tools available publicly, for different variant 
   
 ---
 
-### Variant discovery using GATK
+## Variant discovery using GATK
 
 In this section, we are going to use GATK to call short variants (SNPs + Indels) using GATK.
 
@@ -49,9 +49,10 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-va
 ---
 
 
-#### Mark duplicates
+### Mark duplicates
 
-This step is optional if you have done deduplication in read preprocessing step, as we have done using hts_SuperDeduper. The steps below serves as a helper if you need it in your own data analysis, where you do not do deduplication in the data preprocessing step.  
+This step is optional if you have done deduplication in read preprocessing step, as we have done using hts_SuperDeduper. The steps below serves as a helper if you need it in your own data analysis, where you do not do deduplication in the data preprocessing step. 
+
 
    cd /share/workshop/gwas_workshop/$USER/gwas_example  
    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/picard.slurm  

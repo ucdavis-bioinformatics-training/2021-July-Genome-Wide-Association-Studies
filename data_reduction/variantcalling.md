@@ -69,19 +69,19 @@ The aim of this step is to detect systematic errors made by the sequencer when e
 
 
 <p align = "center">
-<img src="gatk_figures/BQSR1.png" alt="BQSR_1" width="60%"/>
+<img src="gatk_figures/BQSR1.png" alt="BQSR_1" width="80%"/>
 </p>
 
 <p align = "center">
-<img src="gatk_figures/BQSR2.png" alt="BQSR_2" width="60%"/>
+<img src="gatk_figures/BQSR2.png" alt="BQSR_2" width="80%"/>
 </p>
 
 <p align = "center">
-<img src="gatk_figures/BQSR3.png" alt="BQSR_3" width="60%"/>
+<img src="gatk_figures/BQSR3.png" alt="BQSR_3" width="80%"/>
 </p>
 
 <p align = "center">
-<img src="gatk_figures/BQSR4.png" alt="BQSR_4" width="60%"/>
+<img src="gatk_figures/BQSR4.png" alt="BQSR_4" width="80%"/>
 </p>
 
 <p align = "center" style="font-family:Times;font-size:15px;">

@@ -46,8 +46,7 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-va
 1. Joint-call variants
 1. Variant score recalibration
 
----
-
+----------------------------------------
 
 ### Mark duplicates
 
@@ -62,7 +61,7 @@ You will have to modify the slurm script to fit your need.
 
 ---
 
-## Base quality score recalibration (BQSR)
+### Base quality score recalibration (BQSR)
 
 Let's recall what base quality scores are. They are per-base estimates of error emitted by the sequencing machines. They express how confident the machine was that it called the correct base each time. The algorithm used to calculate the quality scores is a black box to any sequencing customers. The scores produced by the sequencing machines are subject to various sources of systematic technical error, leading to inaccurate base quality scores in the data.
 

@@ -93,7 +93,17 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360035890531-Base-Quality-Scor
 
 This step involves two operations: first is to model the base quality scores and calculate the necessary correction (BaseRecalibrator); the second is to apply the correction (ApplyBQSR). The script for this step is [gatk_bqsr.slurm](https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/gatk_bqsr.slurm).
 
-Let's get the script, look at it to understand what it does and run it.
+First, we have to download a few vcf files from [GATK google cloud space](https://console.cloud.google.com/storage/browser/genomics-public-data/resources/broad/hg38/v0;tab=objects?pli=1&prefix=&forceOnObjectsSortingFiltering=false). These will be used for training the machine learning processes necessary during the variant discorey. We are not going to actually download any of them, as some of them will take a long time to download. I have downloaded them and you can create soft links to them for this workshop.
+
+    cd /share/workshop/gwas_workshop/$USER/gwas_example/References
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/1000G_omni2.5.hg38.vcf* .
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/1000G_phase1.snps.high_confidence.hg38.vcf* .
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/hapmap_3.3.hg38.vcf* .
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/Homo_sapiens_assembly38.dbsnp138.vcf* .
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/Mills_and_1000G_gold_standard.indels.hg38.vcf* .
+
+
+Now, let's get the script for base quality score recalibration, look at it to understand what it does and run it.
 
     cd /share/workshop/gwas_workshop/$USER/gwas_example
     wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/gatk_bqsr.slurm

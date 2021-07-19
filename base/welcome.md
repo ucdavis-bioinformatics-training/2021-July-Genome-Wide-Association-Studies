@@ -26,16 +26,18 @@ Our team offers custom bioinformatics services to academic and private organizat
 
 ## Structure of the Virtual Workshops
 
-Given the current Covid19 pandemic, and stay in place orders around the world, we've decided to take our popular bioinformatic workshops virtual. Our intent is to offer as close to an experience we can to our in-person workshops. We will hold the same goals and strive for a similar lecture/hand-on ratio. We will be using multiple technologies in order to help facilitate a maximum amount of interaction.
+Given the current Covid19 pandemic, and stay in place orders around the world, we've took our popular bioinformatic workshops virtual. Our intent is to offer as close to an experience we can to our in-person workshops. We will hold the same goals and strive for a similar lecture/hand-on ratio. We will be using multiple technologies in order to help facilitate a maximum amount of interaction.
 
 #### Zoom
 
 Course lecture, discussions, and one-on-one help/troubleshooting will be conducted using a zoom meeting.
 
-  * Each participant will be provided a personal break out room that will allow one-on-one troubleshooting by our staff, screen sharing and even remote control.
-  * The Chat features of Zoom will **not** be our primary mode of text communication as its history is not reliable.
-  * We will stick to a schedule to allow people to plan their day and know when they need to be back at their computers for lecture.
-  * Video recordings of lectures will be made available to participants.
+
+  * Hands-on portions will be done within group break out rooms
+  * As needed we will use personal break out rooms that will allow one-on-one troubleshooting by our staff, screen sharing and even remote control.
+  * The Chat features of Zoom is disabled and will **not** be our primary mode of text communication, instead Slack will be used.
+  * We will try and stick to a schedule to allow people to plan their day and know when they need to be back at their computers for lecture.
+  * Video recordings of lectures will be made available to participants at the end of each day.
 
 Because video is involved, we ask everyone to be respectful and we reserve the right to remove someone if they are being disrespectful or disruptive.
 
@@ -49,7 +51,7 @@ Text based communication will be conducted via a Slack channel. Staff will be mo
 
 #### Patience
 
-We ask for a little more patience as this process is also new to us, but we are committed to providing you the best educational experience we can (under the current conditions).
+We ask for a little more patience as this process is still new to us and each workshop is different, but we are committed to providing you the best educational experience we can (under the current conditions).
 
 ### Workshop Goals
 
@@ -74,7 +76,7 @@ Workshop materials are all posted on github, and publicly available
    [https://ucdavis-bioinformatics-training.github.io/](https://ucdavis-bioinformatics-training.github.io/)
 
 
-* This Intro to scRNAseq Workshop
+* This GWAS Workshop
 
    [https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/](https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/)
 

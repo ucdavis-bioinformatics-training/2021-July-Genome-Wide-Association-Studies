@@ -27,10 +27,14 @@ navigation:
     url: software_scripts/scripts_links
 
   - heading: Prerequisites
+  - title: Logging In
+    url: intro/logging-in
   - title: CLI
     url: intro/command-line-intro
   - title: R
     url: intro/Intro2R
+  - title: Cluster Computing
+    url: intro/cluster
 
   - heading: Data Reduction
   - title: Project setup

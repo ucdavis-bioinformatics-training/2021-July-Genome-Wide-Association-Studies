@@ -31,7 +31,7 @@ For this workshop we will be using a cluster reservation, meaning we've set asid
 
 |:---|:---|:---|:---|:---|
 |RESV_NAME              |  STATE  |         START_TIME  |           END_TIME     | DURATION
-|epigenetics-workshop   | ACTIVE  |2020-11-29T00:00:00  |2020-12-11T00:00:00  | 12-00:00:00  
+|workshop   | ACTIVE  |2021-07-18T00:00:00  |2021-07-31T00:00:00  | 13-00:00:00  
 
 You'll notice the reservation extends to Dec-11-2020, you will have an extra week to work on the cluster and workshop material.
 
@@ -115,7 +115,7 @@ echo Time taken: $elapsed
 The first line tells sbatch what scripting language (bash here) the rest of the file is in. Any line that begins with a "#" symbol is ignored by the bash interpreter, those lines that begin with "#SBATCH" are used by the slurm controller. Those lines are for specifying sbatch options without having to type them on the command-line every time. In this script, on the next set of lines, we've put some code for calculating the time elapsed for the job and then we simply wait for 5 minutes (300 seconds) and exit. Lets try running it
 
 
-    cd /share/workshop/mrnaseq_workshop/$USER
+    cd /share/workshop/gwas_workshop/$USER
     wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2021-June-RNA-Seq-Analysis/master/software_scripts/scripts/template.slurm template.slurm
     cat template.slurm
     sbatch template.slurm
@@ -168,7 +168,7 @@ To view the same information for all jobs of a user (replace username with your 
 
     module avail
 
-<img src="modules_figure1.png" alt="results of running module avail" width="800px"/>
+<img src="figures/modules_figure1.png" alt="results of running module avail" width="800px"/>
 
 This is a list of all the software (with different versions) that you can access. The format of 'modules' is software/version here you can see htstream has 3 different versions installed with the latest being 1.0.0. When you load a module without specifying a version, it will load the default (generally the latest) version. If you need an older version, you need to use the cooresponding version number:
 

@@ -107,4 +107,24 @@ Let's get the script, look at it to understand what it does and run it.
 
 ### Calling variants (HaplotypeCaller)
 
+<p align = "center">
+<img src="gatk_figures/HC1.png" alt="HaplotypeCaller_overview" width="60%"/>
+</p>
+
+<p align = "center" style="font-family:Times;font-size:15px;">
+https://gatk.broadinstitute.org/hc/en-us/articles/360035531412-HaplotypeCaller-in-a-nutshell
+</p>
+
+
+Four steps involved in this process:
+
+  * Define active regions
+    Travers the sequencing data to identify regions that show variation beyond the expected background noise. These active regions are passed to the next step for analysis.
+  * Determine haplotypes by local assembly of the active region
+    Construct the complete sequences covering the entire length of a actove region using a local assembly, which is called haplotypes. This process typically generate several different possible haplotypes for each active region. These haplotypes are realigned to the reference to identify potential variant sites.
+  * Evaluating the evidence for haplotypes and variant alleles
+    This step takes into account the quality of the data (the base quality scores and indel quality scores). A score is produced to express the likelihood of observing a read from a haplotype.
+  * Assigning per-sample genotypes
+    Using the likelihood scores calculated in the previous step and Bayes' theorem to calculate the likelihoods of each possible genotype. The degree of confidene in a genotype depends on both the quality and the quantity of the available data. Low coverage and low quality will both lead to lower confidence calls. Only the reads that safisfy certain mapping quality thresholds and the bases that satisfy certain base quality thresholds will be used: 20.
+
 

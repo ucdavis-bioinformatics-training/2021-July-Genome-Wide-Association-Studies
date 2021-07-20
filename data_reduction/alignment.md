@@ -199,10 +199,10 @@ You can also use 'samtools flagstat' to get a summary of the alignment:
 </div>
 
 
-**Question:**
-1. What does _samtools view_ do?
-2. What does _samtools sort_ do?
-3. What does _samtools flagstat_ do?
+**Questions:**
+- What does _samtools view_ do?
+- What does _samtools sort_ do?
+- What does _samtools flagstat_ do?
 
 #### <font color='red'> Stop Group Exercise 3: </font>
 

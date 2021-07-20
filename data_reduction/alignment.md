@@ -292,9 +292,9 @@ Now we need to transfer the reference fasta, together with its index file and th
 
 **For those who use Mac, a linux machine or Windows Power Shell, you may open a new terminal windown and use the following scp command to download the files. Do remember to change the _user.name_ to your user name on tadpole.**
 
-    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/$USER/gwas_example/References/chr22.fa .
-    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/$USER/gwas_example/References/chr22.fa.fai .
-    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/$USER/gwas_example/03-BWA/*/*.sorted.bam* .
+    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/user.name/gwas_example/References/chr22.fa .
+    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/user.name/gwas_example/References/chr22.fa.fai .
+    scp user.name@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/user.name/gwas_example/03-BWA/*/*.sorted.bam* .
     pwd
 
 **For others, you may download [Filezilla](https://filezilla-project.org/), install it and then use it to transfer the files.**

@@ -145,4 +145,27 @@ Four steps involved in this process:
   * Assigning per-sample genotypes
     Using the likelihood scores calculated in the previous step and Bayes' theorem to calculate the likelihoods of each possible genotype. The degree of confidene in a genotype depends on both the quality and the quantity of the available data. Low coverage and low quality will both lead to lower confidence calls. Only the reads that safisfy certain mapping quality thresholds and the bases that satisfy certain base quality thresholds will be used: 20.
 
+HaplotypeCalled can be used to call variants for a single-sample GVCF-based calling or multisample calling. GVCF-based calling is a very efficient way of calling variants for many samples, or when the data set is expected to grow over time. Here we are going to go through the GVCF-based calling for each sample first, followed by joint genotyping for all samples. The rationel behind joint genotyping is to leverage population-wide information from a cohort of multiple samples. It allows us to detect variants with great sensitivity and genotype samples as accurately as possible.
 
+Now, let's carry out the variant calling using HaplotypeCaller and GVCF-based per-sample calling.
+
+    cd /share/workshop/gwas_workshop/$USER/gwas_example
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/gatk_hc.slurm  
+    cat gatk_hc.slurm
+    sbatch -J hc.${USER} gatk_hc.slurm
+
+Then, we collect variation information encoded in each GVCF file for all samples and carry out joint genotyping.
+
+    cd /share/workshop/gwas_workshop/$USER/gwas_example
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/gatk_genotyping.slurm  
+    cat gatk_genotyping.slurm
+    sbatch -J gt.${USER} gatk_genotyping.slurm
+
+The filnal result is a file called _trio.vcf.gz_ and its index inside the directory 04-GATK.
+
+
+---
+
+### Filter variants
+
+Variant callsets must be filtered before any downstream analysis. There are two ways to do the filtering: one is hard-filtering using user defined parameters using the annotation of the variants; the second is to use Variant Quality Score Recalibration (VQSR). VQSR is recommended by GATK team. It

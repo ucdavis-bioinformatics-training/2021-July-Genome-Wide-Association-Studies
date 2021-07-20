@@ -207,8 +207,6 @@ The sequence that was aligned. If hard clipping occurred, only the aligned porti
 The quality scores of the sequence that was aligned. If hard clipping occurred, only the aligned portion is represented, if soft clipping occurred, the original sequence is present.
 
 
----
-
 ### Variant call file type
 
 VCF is a text file format. It contains meta-information lines, a header line, followed by data lines each containing information about a position in the genome. The format has the ability to contain genotype information on samples for each position. The full description of this file type is at https://samtools.github.io/hts-specs/VCFv4.2.pdf.

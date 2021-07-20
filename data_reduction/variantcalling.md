@@ -102,6 +102,14 @@ First, we have to download a few vcf files from [GATK google cloud space](https:
     ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/Homo_sapiens_assembly38.dbsnp138.vcf* .
     ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/Mills_and_1000G_gold_standard.indels.hg38.vcf* .
 
+These files are very valuable resources for GATK analysis for human. They include known sites, training sets and truth sets. 
+
+**Know sites** is a list of variants that have been previously identified and reported, such as dbSNP. This list typically does not imply any level of systematic curation or cross-validation. Tools that take these data as input do not assume that the variant calls in the list are all true. One could _bootstrap_ a list of known sites by a first round of variant calling without BQSR or VQSR.
+
+**Training sets** is a list of variants that is used by machine learning algoriths to model the properties of true variation vs. artifacts. This requires a higher standard of curation and validation. Tools take this data as input typically accept a parameter that indicates your degree of confidence in the resource. This set is difficult to bootstrap, as it benefits greatly from orthogonal valication.
+
+**Truth sets** is a list of variants that is used to evaluate the quality of a variant callset (eg. sensitivity and specificity, or recall). This requires the highest standard of validation. Tools take this data as input assume that all variants in the set are true variation. This set cannot be bootstrapped and must be generated using orthogonal validation methods.
+
 
 Now, let's get the script for base quality score recalibration, look at it to understand what it does and run it.
 

@@ -37,6 +37,8 @@ navigation:
     url: intro/cluster
 
   - heading: Data Reduction
+  - title: Files and Filetypes
+    url: data_reduction/filetypes
   - title: Project setup
     url: data_reduction/project-setup
   - title: Preprocessing raw data

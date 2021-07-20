@@ -214,7 +214,7 @@ You can also use 'samtools flagstat' to get a summary of the alignment:
 
 **4\.** In the next step, we will use another Slurm script to run all the alignment commands on all of the samples. First download the script:
 
-    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/bwa.slurm
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/bwa.slurm -O bwa.slurm
 
 Take a look at it and understand what it's doing:
 
@@ -333,8 +333,8 @@ This region is still to large for IGV to display any alignment. Now, you can dra
 **9\.** I would like to introduce a tool: [Qualimap](http://qualimap.conesalab.org/doc_html/index.html), which takes sorted bam files as input and output many metrics that may point to potential problems. Two slurm scripts can be run to produce both single sample summaries, as well as multiple samples report.
 
     cd /share/workshop/gwas_workshop/$USER/gwas_example
-    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/qualimap_single.slurm
-    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/qualimap_multi.slurm
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/qualimap_single.slurm -O qualimap_single.slurm
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/qualimap_multi.slurm -O qualimap_multi.slurm
 
 Once the jobs are done, we can download the html files and the corresponding images_* directories to our local machine for visualization. [here](multisampleBamQcReport.html) is the multiple sample report I produced.
 

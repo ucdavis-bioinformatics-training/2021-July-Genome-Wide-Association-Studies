@@ -121,7 +121,7 @@ Index the reference:
     bwa index chr22.fa
 
 **Questions:**
-1. How many new files were created by _bwa index_ command?
+- How many new files were created by _bwa index_ command?
 
 #### <font color='red'> Stop Group Exercise 1: </font>
 
@@ -150,8 +150,8 @@ Note that the Usage shows that we need to give bwa a location for the 'idxbase',
 This step will take a minute to run. The output of the alignment has been saved to a sam file, which is a text file format. It can be looked at by using any text editor. Please use _nano_ to look at the file and see whether you recognize any information included in it. We will come back together and talk about the sam file format in detail in the main room.
 
 **Questions:**
-1. What does the parameter "-t" do?
-2. What does the parameter "-R" do?
+- What does the parameter "-t" do?
+- What does the parameter "-R" do?
 
 #### <font color='red'> Stop Group Exercise 2: </font>
 

@@ -214,6 +214,7 @@ You can also use 'samtools flagstat' to get a summary of the alignment:
 
 **4\.** In the next step, we will use another Slurm script to run all the alignment commands on all of the samples. First download the script:
 
+    cd /share/workshop/gwas_workshop/$USER/gwas_example
     wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/bwa.slurm -O bwa.slurm
 
 Take a look at it and understand what it's doing:

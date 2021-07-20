@@ -557,7 +557,7 @@ PCA/MDS plots of the preprocessing summary are a great way to look for technical
     **IF for some reason HTStream didn't finish, the files are corrupted or you missed the session, please let one of us know and we will help. You can also copy over the HTStream output.**
 
     ```bash
-    cp -r /share/biocore/workshops/2020_mRNAseq_July/01-HTS_Preproc /share/workshop/gwas_workshop/$USER/gwas_example/.
+    cp -r /share/workshop/gwas_workshop/jli/gwas_example/01-HTS_Preproc /share/workshop/gwas_workshop/$USER/gwas_example/.
     ```
 
 1. Let's take a look at the differences in adapter content between the input and output files. First look at the input file:

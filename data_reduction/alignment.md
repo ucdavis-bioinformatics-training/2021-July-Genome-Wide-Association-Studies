@@ -87,7 +87,7 @@ Genome sequence fasta file should be identified at the beginning of the analysis
 
 * For variant calling purpose, a decoy sequence set could be added to improve mapping quality. The decoy sequences contain known true human sequences that are not in the reference genome. It will help to reduce the number of reads that would otherwise map with low quality in the reference. 
 
-* Alternative haplotype contigs should not be included in the reference, unless a ALT-aware mapper is used.
+* Alternative haplotype contigs should be considered carefully whether they should be included in the reference.
 
 [here](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.28_GRCh38.p13/GRCh38_major_release_seqs_for_alignment_pipelines/) is where one can find the proper version of human reference genome.
 

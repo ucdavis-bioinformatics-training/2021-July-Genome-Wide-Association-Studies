@@ -208,7 +208,7 @@ You can also use 'samtools flagstat' to get a summary of the alignment:
 
 ---
 
-#### <font color='red'> Stop Group Exercise 4: </font>
+#### <font color='red'> Start Group Exercise 4: </font>
 - work through running alignment for all samples using the slurm script
 - work through visualizing the alignment using IGV
 

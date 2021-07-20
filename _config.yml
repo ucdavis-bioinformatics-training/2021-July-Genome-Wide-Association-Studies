@@ -27,14 +27,28 @@ navigation:
     url: software_scripts/scripts_links
 
   - heading: Prerequisites
+  - title: Logging In
+    url: intro/logging-in
   - title: CLI
-    url: base/cli_prerequisites
+    url: intro/command-line-intro
   - title: R
-    url: base/r_prerequisites
+    url: intro/Intro2R
+  - title: Cluster Computing
+    url: intro/cluster
 
-  - heading: Data Reduction and Analysis
-  - title: Data Reduction
-    url: data_reduction/GWAS
+  - heading: Data Reduction
+  - title: Files and Filetypes
+    url: data_reduction/filetypes
+  - title: Project setup
+    url: data_reduction/project-setup
+  - title: Preprocessing raw data
+    url: data_reduction/htstream
+  - title: Alignment with BWA
+    url: data_reduction/alignment
+  - title: Variant calling using GATK
+    url: data_reduction/variantcalling
+
+  - heading: Data Analysis
   - title: Data Analysis
     url: data_analysis/GWAS
 

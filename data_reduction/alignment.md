@@ -139,14 +139,6 @@ Index the reference:
     mkdir -p BWA_testing
     cd BWA_testing
 
-**For those who have finished the preprocessing steps using htstream, please use the following commands to copy the files that I have created.**
-
-    while read sample
-    do
-      cp /share/workshop/gwas_workshop/jli/gwas_example/01-HTS_Preproc/${sample}/${sample}.htstream_*.fastq.gz ../01-HTS_Preproc/${sample}/
-    done<../samples.txt
-
-
 We will be using the 'mem' algorithm under BWA to carry out the alignments. First, let's take a look at the help manual:
 
     bwa mem --help

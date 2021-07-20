@@ -33,7 +33,7 @@ CASAVA 1.8 Read IDs
 * EAS139 the unique instrument name
 * 136 the run id
 * FC706VJ the flowcell id
-* 2 flowcell lane
+* flowcell lane 2
 * 2104 tile number within the flowcell lane
 * 15343 ’x’-coordinate of the cluster within the tile
 * 197393 ’y’-coordinate of the cluster within the tile

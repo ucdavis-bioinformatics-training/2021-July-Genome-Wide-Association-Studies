@@ -1,0 +1,5 @@
+- PGRS
+- INDELS
+- rvTDT
+- Genebased TDT
+- continuous variables

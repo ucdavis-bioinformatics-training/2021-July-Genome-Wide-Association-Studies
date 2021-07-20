@@ -449,6 +449,8 @@ When you are done, type "q" to exit.
 #SBATCH --time=60:00
 #SBATCH --mem=4000 # Memory pool for all cores (see also --mem-per-cpu)
 #SBATCH --partition=production
+#SBATCH --reservation=workshop
+#SBATCH --account=workshop
 #SBATCH --array=1-3
 #SBATCH --output=slurmout/htstream_%A_%a.out # File to which STDOUT will be written
 #SBATCH --error=slurmout/htstream_%A_%a.err # File to which STDERR will be written

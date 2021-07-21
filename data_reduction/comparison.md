@@ -43,3 +43,16 @@ deepvariant  96581
 Looking at just the variant call positions, here is the venn diagram of shared positions:
 
 ![venn diagram](venn.png)
+
+
+Filtering for just SNPs gives us this venn diagram:
+
+![venn diagram](venn2.png)
+
+
+And finally, looking at identical genotype calls give us this:
+
+![venn diagram](venn3.png)
+
+
+You can see that almost all of the SNP calls are the same, which is to be expected.

@@ -114,6 +114,13 @@ These files are very valuable resources for GATK analysis for human. They includ
 
 **Truth sets** is a list of variants that is used to evaluate the quality of a variant callset (eg. sensitivity and specificity, or recall). This requires the highest standard of validation. Tools take this data as input assume that all variants in the set are true variation. This set cannot be bootstrapped and must be generated using orthogonal validation methods.
 
+GATK requires a reference genome dictionary file for analysis, the commands below shows how to create it.
+
+    cd /share/workshop/gwas_workshop/$USER/gwas_example/References
+    module load gatk
+    gatk CreateSequenceDictionary -R chr22.fa
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/chr22.bed .
+
 
 Now, let's get the script for base quality score recalibration, look at it to understand what it does and run it.
 

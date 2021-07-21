@@ -131,7 +131,7 @@ Now, let's get the script for base quality score recalibration, look at it to un
 
 You might have to install one R library (gsalib). Do not worry if you cannot get gatk_analyze_bqsr.slurm to run properly. I have created the plots.
 
-<object data="gatk_figures/SL378587.BQSR.pdf" type="application/pdf" width="80%">
+<object data="gatk_figures/SL378587.BQSR.pdf" type="application/pdf" width="100%">
 </object>
 
 

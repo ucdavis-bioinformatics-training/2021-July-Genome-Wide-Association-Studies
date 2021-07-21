@@ -119,6 +119,7 @@ GATK requires a reference genome dictionary file for analysis, the commands belo
     cd /share/workshop/gwas_workshop/$USER/gwas_example/References
     module load gatk
     gatk CreateSequenceDictionary -R chr22.fa
+    ln -s /share/workshop/gwas_workshop/jli/gwas_example/References/chr22.bed .
 
 
 Now, let's get the script for base quality score recalibration, look at it to understand what it does and run it.

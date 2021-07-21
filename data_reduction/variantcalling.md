@@ -134,6 +134,8 @@ You might have to install one R library (gsalib). Do not worry if you cannot get
 <object data="gatk_figures/SL378587.BQSR.pdf" type="application/pdf" width="100%" height="400px">
 </object>
 
+<br>
+<br>
 
 ##### <font color='red'> Stop Group Exercise 1: </font>
 

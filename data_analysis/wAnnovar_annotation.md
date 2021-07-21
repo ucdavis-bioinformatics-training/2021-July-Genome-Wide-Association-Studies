@@ -4,7 +4,7 @@
 - ANNOVAR is a rapid, efficient tool to annotate functional consequences of genetic variation from high-throughput sequencing data. wANNOVAR provides easy and intuitive web-based access to the most popular functionalities of the ANNOVAR software
 
 
-### <font color='red'> Start Group Exercise  (45 mins)</font>
+### <font color='red'> Start Group Exercise  (40 mins)</font>
 
 
 
@@ -55,7 +55,6 @@ python fix_tdt.py
 ```
 
 - merge these csv files so we only have one to run
-
 ```
 head -1 02-CleanedTDT/tdt_21.frq.csv > tdtfrq.csv
 for i in `ls 02-CleanedTDT/*.frq.csv`; do tail -n +2 "${i}" >> tdtfrq.csv; done
@@ -65,7 +64,6 @@ for i in `ls 02-CleanedTDT/*.tdt.adjusted.csv`; do tail -n +2 "${i}" >> tdtadj.c
 ```
 
 - lets take a quick look at our final files
-
 ```
 cat master.avinput | wc -l
 cat tdtadj.csv | wc -l

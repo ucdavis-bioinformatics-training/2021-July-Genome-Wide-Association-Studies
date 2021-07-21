@@ -122,6 +122,18 @@ Now, let's get the script for base quality score recalibration, look at it to un
     cat gatk_bqsr.slurm
     sbatch -J bqsr.${USER} gatk_bqsr.slurm
 
+**After** the slurm script has finished properly, we can use the following steps to generate some plots to show what the base recalibration has done.
+
+    cd /share/workshop/gwas_workshop/$USER/gwas_example
+    wget https://ucdavis-bioinformatics-training.github.io/2021-July-Genome-Wide-Association-Studies/software_scripts/scripts/gatk_analyze_bqsr.slurm
+    cat gatk_analyze_bqsr.slurm
+    sbatch -J cov.${USER} gatk_analyze_bqsr.slurm
+
+You might have to install one R library (gsalib). Do not worry if you cannot get gatk_analyze_bqsr.slurm to run properly. I have created the plots.
+
+<object data="gatk_figures/SL378587.BQSR.pdf" type="application/pdf" width="80%">
+</object>
+
 
 ##### <font color='red'> Stop Group Exercise 1: </font>
 

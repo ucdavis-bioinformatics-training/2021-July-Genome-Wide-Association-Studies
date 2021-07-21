@@ -96,6 +96,8 @@ outpath='01-Plink_fam_fix'
 ```
 infile="00-Fixed/chr${sample}.subset.vqsr.vcf"
 ```
+
+
 ---
 
 # Generate the b file
@@ -358,7 +360,7 @@ head ${outpath}/cleanedME_${sample}.bim
 ---
 
 # Filter on common variants for IBD
-- This should be before the mendelian part
+- need more info here
 
 ```
 call6="plink --bfile ${outpath}/cleanedME_${sample} --maf 0.4 --make-bed --out ${outpath}/common_${sample}"
@@ -649,3 +651,4 @@ After returning from break we will move onto the wAnnovar annotation with the da
 - clean up more for nik to work on tomoro
 - fix allow-no-sex and clean up the fam file
 - check my fam file with Anthony
+- Produce the adjust and non adjusted values here

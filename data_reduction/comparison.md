@@ -40,6 +40,6 @@ GATK         127217
 deepvariant  96581    
 
 
-Looking at just the variant call positions, here is the overlapping venn diagram:
+Looking at just the variant call positions, here is the venn diagram of shared positions:
 
 ![venn diagram](venn.png)

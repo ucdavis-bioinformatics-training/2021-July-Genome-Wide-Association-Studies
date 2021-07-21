@@ -44,7 +44,6 @@ call="gatk AddOrReplaceReadGroups \
 	--RGPL Illumina \
 	--RGSM ${sample}"
 
-#--RGPU A00323 \
 
 echo $call
 eval $call

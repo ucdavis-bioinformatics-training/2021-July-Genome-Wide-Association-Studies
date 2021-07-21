@@ -131,7 +131,7 @@ Now, let's get the script for base quality score recalibration, look at it to un
 
 You might have to install one R library (gsalib). Do not worry if you cannot get gatk_analyze_bqsr.slurm to run properly. I have created the plots.
 
-<object data="gatk_figures/SL378587.BQSR.pdf" type="application/pdf" width="100%" height="300px">
+<object data="gatk_figures/SL378587.BQSR.pdf" type="application/pdf" width="100%" height="400px">
 </object>
 
 
@@ -451,6 +451,16 @@ https://www.nature.com/articles/s41598-020-77218-4
 
 ## Larger dataset for practice
 
-We have created a dataset for the full chromosome chr22. They are located in /share/biocore/workshops/GWAS/00-RawData/. You can link them to your directory and run the full workflow that we have talked about, from data preprocessing to variant calling.
+We have created a dataset for the full chromosome chr22. They are located in /share/biocore/workshops/2021_July_GWAS/dataset/chr22.full/00-RawData/. You can link them to your directory and run the full workflow that we have talked about, from data preprocessing to variant calling.
 
+We have provided some scripts to run the full chromosome chr22 data through two different packages than GATK: DeepVariant and Freebayes. They are located inside /share/biocore/workshops/2021_July_GWAS/dataset/chr22.full/scripts.
+
+## Resources for variant calling
+
+* GATK
+  - https://gatk.broadinstitute.org/hc/en-us/
+* DeepVariant
+  - https://github.com/google/deepvariant
+* Freebayes
+  - https://github.com/freebayes/freebayes
 

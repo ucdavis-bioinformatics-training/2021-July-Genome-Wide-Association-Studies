@@ -419,9 +419,15 @@ The above commands generate the merged variants in _trio.filtered.all.vcf.gz_ fi
 <img src="gatk_figures/Benchmark_dv_dragen1.png" alt="compare1" width="60%"/>
 </p>
 
+<br>
+<br>
+
 <p align = "center">
 <img src="gatk_figures/Benchmark_dv_dragen2.png" alt="compare2" width="70%"/>
 </p>
+
+<br>
+<br>
 
 <p align = "center">
 <img src="gatk_figures/Benchmark_dv_dragen3.png" alt="compare3" width="70%"/>

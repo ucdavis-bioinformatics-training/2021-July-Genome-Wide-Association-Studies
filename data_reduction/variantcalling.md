@@ -416,15 +416,15 @@ The above commands generate the merged variants in _trio.filtered.all.vcf.gz_ fi
 ## Compare variant callers
 
 <p align = "center">
-<img src="gatk_figures/benchmark_dv_dragen1.png" alt="compare1" width="60%"/>
+<img src="gatk_figures/Benchmark_dv_dragen1.png" alt="compare1" width="60%"/>
 </p>
 
 <p align = "center">
-<img src="gatk_figures/benchmark_dv_dragen2.png" alt="compare2" width="70%"/>
+<img src="gatk_figures/Benchmark_dv_dragen2.png" alt="compare2" width="70%"/>
 </p>
 
 <p align = "center">
-<img src="gatk_figures/benchmark_dv_dragen3.png" alt="compare3" width="70%"/>
+<img src="gatk_figures/Benchmark_dv_dragen3.png" alt="compare3" width="70%"/>
 </p>
 
 <p align = "center" style="font-family:Times;font-size:15px;">

@@ -35,8 +35,6 @@ The gatk commands were the ones from the course.
 
 Here are the numbers of variants found per software (after filtering out low quality variants):
 
-Software     Variants 
------------  -------- 
 freebayes    110340   
 GATK         127217   
 deepvariant  96581    

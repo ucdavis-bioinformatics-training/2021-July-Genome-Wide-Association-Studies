@@ -411,3 +411,28 @@ The above commands generate the merged variants in _trio.filtered.all.vcf.gz_ fi
 
 ##### <font color='red'> Stop Group Exercise 4: </font>
 
+---
+
+## Compare variant callers
+
+<p align = "center">
+<img src="gatk_figures/benchmark_dv_dragen1.png" alt="compare1" width="60%"/>
+</p>
+
+<p align = "center">
+<img src="gatk_figures/benchmark_dv_dragen2.png" alt="compare2" width="70%"/>
+</p>
+
+<p align = "center">
+<img src="gatk_figures/benchmark_dv_dragen3.png" alt="compare3" width="70%"/>
+</p>
+
+<p align = "center" style="font-family:Times;font-size:15px;">
+https://www.nature.com/articles/s41598-020-77218-4
+</p>
+
+## Larger dataset for practice
+
+We have created a dataset for the full chromosome chr22. They are located in /share/biocore/workshops/GWAS/00-RawData/. You can link them to your directory and run the full workflow that we have talked about, from data preprocessing to variant calling.
+
+

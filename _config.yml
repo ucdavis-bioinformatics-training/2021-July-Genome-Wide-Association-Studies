@@ -47,6 +47,8 @@ navigation:
     url: data_reduction/alignment
   - title: Variant calling using GATK
     url: data_reduction/variantcalling
+  - title: Comparison of freebayes, GATK, and deepvariant output
+    url: data_reduction/comparison
 
   - heading: Data Analysis
   - title: Data Analysis

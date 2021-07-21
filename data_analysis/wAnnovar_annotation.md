@@ -55,6 +55,7 @@ python fix_tdt.py
 ```
 
 - merge these csv files so we only have one to run
+
 ```
 head -1 02-CleanedTDT/tdt_21.frq.csv > tdtfrq.csv
 for i in `ls 02-CleanedTDT/*.frq.csv`; do tail -n +2 "${i}" >> tdtfrq.csv; done
@@ -64,24 +65,12 @@ for i in `ls 02-CleanedTDT/*.tdt.adjusted.csv`; do tail -n +2 "${i}" >> tdtadj.c
 ```
 
 - lets take a quick look at our final files
+
 ```
 cat master.avinput | wc -l
 cat tdtadj.csv | wc -l
 cat tdtfrq.csv | wc -l
 ```
-
-## Question:
-
-
-
-
-# TODO
-- still need freq in here...
-- need to get rid of the extra head line
-- Produce the adjust and non adjusted values here
-- Why is do the number in the annotated file > the common file... but annovar says 3474
-
-
 
 
 

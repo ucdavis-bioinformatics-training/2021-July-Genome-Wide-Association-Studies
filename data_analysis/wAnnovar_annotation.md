@@ -63,6 +63,7 @@ head -1 02-CleanedTDT/tdt_21.tdt.adjusted.csv > tdtadj.csv
 for i in `ls 02-CleanedTDT/*.tdt.adjusted.csv`; do tail -n +2 "${i}" >> tdtadj.csv; done
 ```
 
+
 - lets take a quick look at our final files
 ```
 cat master.avinput | wc -l

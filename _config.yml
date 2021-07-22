@@ -52,12 +52,12 @@ navigation:
 
   - heading: Data Analysis
   - title: Plink Step by Step TDT
-  - url: data_analysis/Plink_Stepbystep
+    url: data_analysis/Plink_Stepbystep
   - title: wAnnovar Annotation
-  - url: data_analysis/wAnnovar_annotation
+    url: data_analysis/wAnnovar_annotation
   - title: Plink Step by Step (Non FBAT excercise)
-  - url: data_analysis/Plink_Stepbystep_normal
-    
+    url: data_analysis/Plink_Stepbystep_normal
+
 
   - heading: ETC
   - title: Closing thoughts

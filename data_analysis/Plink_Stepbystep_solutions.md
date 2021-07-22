@@ -137,4 +137,8 @@ talk with anthony about. In addition you see here that we have some non perfect 
 - could add just explore tdt file with excel part
 - PRS: https://choishingwan.github.io/PRS-Tutorial/plink/
 
+- Anothony what is normal amount of mendelian errors and what is normal amount of monomorphic?
+- De novo mutations investigated using rvTDT?
+- What does plink do with doublets?
+
 

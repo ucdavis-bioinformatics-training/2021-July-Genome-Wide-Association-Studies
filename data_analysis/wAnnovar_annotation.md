@@ -48,6 +48,7 @@ What is the dbSNP id for the more annotated variants? What is the MAF of the pop
 ## Now on the cluster:
 
 - simple python script that makes the awkward plink output a clean CSV
+
 ```
 cd /share/workshop/gwas_workshop/${USER}/plink
 # Very simple script is just turning the values into a csv file for easier analysis with R uses the adjusted tdt file
@@ -55,6 +56,7 @@ python fix_tdt.py
 ```
 
 - merge these csv files so we only have one to run
+
 ```
 head -1 02-CleanedTDT/tdt_21.frq.csv > tdtfrq.csv
 for i in `ls 02-CleanedTDT/*.frq.csv`; do tail -n +2 "${i}" >> tdtfrq.csv; done
@@ -65,6 +67,7 @@ for i in `ls 02-CleanedTDT/*.tdt.adjusted.csv`; do tail -n +2 "${i}" >> tdtadj.c
 
 
 - lets take a quick look at our final files
+
 ```
 cat master.avinput | wc -l
 cat tdtadj.csv | wc -l

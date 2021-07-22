@@ -462,7 +462,7 @@ https://www.nature.com/articles/s41598-020-77218-4
 
 We have created a dataset for the full chromosome chr22. They are located in /share/biocore/workshops/2021_July_GWAS/dataset/chr22.full/00-RawData/. You can link them to your directory and run the full workflow that we have talked about, from data preprocessing to variant calling.
 
-We have provided some scripts to run the full chromosome chr22 data through two different packages than GATK: DeepVariant and Freebayes. They are located inside /share/biocore/workshops/2021_July_GWAS/dataset/chr22.full/scripts.
+We have provided some scripts to run the full chromosome chr22 data through two different packages than GATK: DeepVariant and Freebayes. They are located inside /share/biocore/workshops/2021_July_GWAS/datasets/chr22.full/scripts.
 
 ## Resources for variant calling
 

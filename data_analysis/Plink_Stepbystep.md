@@ -11,12 +11,12 @@
 - Filter based on percentage genotyped 
 - Filter based on monomorphic SNPs
 - Remove hemizygous SNPs
-- Get Mendelian Errors and filter these out.
 - Calculate Identity by Descent (IBD)
+- Get Mendelian Errors and filter these out.
 - Calculate TDT (transmission disequilibrium test), a type of FBAT (family based assocation test)
 
 
-![](figures/d2a61bc2.png)
+![](figures/2075fd2e.png)
 
 --- 
 
@@ -27,6 +27,7 @@
 - We are analyzing two chromosomes due to the fact that running the full data could be very computationally intensive and
 this data is not fully released to the public yet.
 - chr 21 and chr 22 will be used as they are on the smaller side. 
+- The family based metadata is not perfect and we are still working on curating based on the process/workflow above.
 
 ## What is craniosynostosis?
 
@@ -222,6 +223,7 @@ What was position of the 5th variant removed?
 - [From Biostars](https://www.biostars.org/p/80014/#80018)
 - Monomorphic SNPs are SNPs that are fixed at one allele in the entire dataset.  This means that every single person in the dataset has a “G” for a particular SNP and no other allele.  So this SNP will have no information at all, because it has no other allele to compare to.
 - Mmonomorphic means something that appears in just one state (or form), in contrast to polymorphic that means something that appears in more than one form. SNPs are by definition polymorphic. A monomorphic site is one site in which all the individuals have the same form (genotype). It is a good idea to exclude it from analysis because it gives no information.
+- `--maf 0.000001` will remove anything will a MAF below 0.000001, basically anything with a MAF of 0 (monomorphic).
 
 ```
 mono="plink --bfile ${outpath}/clean-missing_${sample} --maf 0.000000001 --make-bed --out ${outpath}/clean-missing-monos_${sample}"
@@ -263,7 +265,7 @@ awk '{print $1"\t"$4"\t"$3"\t"$4"\t"$5"\t"$6}' ${outpath}/tempfile_${sample}.bim
 
 ```
 grep "*" ${outpath}/clean-missing-monos_${sample}.bim | awk '{print $4}' > ${outpath}/allHemizgyous_${sample}.txt
-hemizy="plink --bfile ${outpath}/clean-missing-monos_${sample} --exclude ${outpath}/allHemizgyous_${sample}.txt --freq --allow-no-sex --make-bed --out ${outpath}/clean-basic-QC_${sample}"
+hemizy="plink --bfile ${outpath}/clean-missing-monos_${sample} --exclude ${outpath}/allHemizgyous_${sample}.txt --make-bed --out ${outpath}/clean-basic-QC_${sample}"
 echo $hemizy
 eval $hemizy
 ```
@@ -302,7 +304,9 @@ After returning from break we will work on the second half of this document afte
 ---
 
 # Filter on common variants for IBD
-- need more info here
+- Using –maf 0.4 leaves (not removes) the common variants for IBD; it leaves anything with a MAF > 0.4.  
+- The reason is that IBD only needs to be calculated with common variants, rare variants can sometimes distort IBD values.  
+- The choice of 0.4 is admittedly somewhat arbitrary, 0.3 or 0.2 would probably work fine as well.
 
 ```
 common="plink --bfile ${outpath}/clean-basic-QC_${sample} --maf 0.4 --make-bed --out ${outpath}/common_${sample}"
@@ -323,7 +327,7 @@ What percentage of variants are removed at this step? Why do you think the natur
 - This is an important part to stop at and assess that each of our trios have the proper IBD.
 
 ```
-ibdcalc="plink --bfile ${outpath}/common_${sample} --extract ${outpath}/common_${sample}.prune.in --make-bed --out ${outpath}/idb_${sample}"
+ibdcalc="plink --bfile ${outpath}/common_${sample} --make-bed --out ${outpath}/idb_${sample}"
 echo $ibdcalc
 eval $ibdcalc
 ```
@@ -336,6 +340,7 @@ eval $ibdcalc
 - [genome file from Plink](https://www.cog-genomics.org/plink/1.9/ibd)
 - These calculations are not LD-aware. It is usually a good idea to perform some form of LD-based pruning before invoking them.
 - https://www.biostars.org/p/188894/#189052
+
 
 ```
 relcheck="plink --bfile ${outpath}/idb_${sample} --genome --rel-check --out ${outpath}/ibd-relcheck_${sample}"
@@ -350,7 +355,9 @@ head ${outpath}/ibd-relcheck_${sample}.genome
 ```
 
 
-## Question:
+## Question: 
+
+What could be happening with the relationship between 5136-SB-0663 & 5136-SB-0666? (Hint: look at PI HAT)
 
 
 
@@ -418,9 +425,10 @@ After returning from break we will work on the remainder of this document after 
 
 - [From Wikipedia](https://en.wikipedia.org/wiki/Transmission_disequilibrium_test)
 - A specificity of the TDT is that it will detect genetic linkage only in the presence of genetic association. While genetic association can be caused by population structure, genetic linkage will not be affected, which makes the TDT robust to the presence of population structure.
-- The derivation of the TDT shows that one should only use the heterozygous parents (total number b+c). The TDT tests whether the proportions b/(b+c) and c/(b+c) are compatible with probabilities (0.5, 0.5). This hypothesis can be tested using a binomial (asymptotically chi-square) test with one degree of freedom:
+- [From ScienceDirect](https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/transmission-disequilibrium-test)
 
-![](figures/c6c3b6ac.png)
+    ![](figures/23010614.png)
+    ![](figures/d1d2c52c.png)
 
 
 - it is important to notice the `--freq` command will be used here to produce a file with the MAF (minor allele frequency) 
@@ -454,6 +462,7 @@ transferring files to our local computer. The cluster is great but it doesnt pre
 
 
 # Lets convert our plink output at the point prior to TDT in order to annotate
+
 - we do this here in prep for annotation which we will perform later
 
 ```
@@ -558,7 +567,7 @@ awk '{print $1"\t"$4"\t"$3"\t"$4"\t"$5"\t"$6}' ${outpath}/tempfile_${sample}.bim
 
 # filter out hemizygous SNPs
 grep "*" ${outpath}/clean-missing-monos_${sample}.bim | awk '{print $4}' > ${outpath}/allHemizgyous_${sample}.txt
-hemizy="plink --bfile ${outpath}/clean-missing-monos_${sample} --exclude ${outpath}/allHemizgyous_${sample}.txt --freq --allow-no-sex --make-bed --out ${outpath}/clean-basic-QC_${sample}"
+hemizy="plink --bfile ${outpath}/clean-missing-monos_${sample} --exclude ${outpath}/allHemizgyous_${sample}.txt --make-bed --out ${outpath}/clean-basic-QC_${sample}"
 echo $hemizy
 eval $hemizy
 
@@ -570,7 +579,7 @@ eval $common
 
 
 # calculate IBD
-ibdcalc="plink --bfile ${outpath}/common_${sample} --extract ${outpath}/common_${sample}.prune.in --make-bed --out ${outpath}/idb_${sample}"
+ibdcalc="plink --bfile ${outpath}/common_${sample} --make-bed --out ${outpath}/idb_${sample}"
 echo $ibdcalc
 eval $ibdcalc
 
@@ -648,11 +657,3 @@ After returning from break we will move onto the wAnnovar annotation with the da
 
 ---
 
-
-# TODO 
-- fix plink_final.slurm and fix mendel error and ibd order
-- add extracting a few certain snps to see which individuals vary
-- check my fam file with Anthony
-- fix allow-no-sex and clean up the fam file
-- what should params be for MAF????
-- could add just explore tdt file with excel part

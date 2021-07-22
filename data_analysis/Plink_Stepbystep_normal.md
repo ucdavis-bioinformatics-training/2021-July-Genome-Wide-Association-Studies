@@ -6,7 +6,7 @@
 - By normal association test we mean we will not be performing a FBAT.
 - As a quick review, lets look at our plink workflow again. 
 
-![](figures/d2a61bc2.png)
+![](figures/2075fd2e.png)
 
 - Lets also take a look at the start of the fam file we were using again:
 

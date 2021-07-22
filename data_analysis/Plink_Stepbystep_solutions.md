@@ -92,3 +92,49 @@ cat ${outpath}/allHemizgyous_${sample}.txt | wc -l
 ```
 
 
+
+# Question about common variant filtering
+
+What percentage of variants are removed at this step? Why do you think the nature of this percentage is fairly extreme?
+
+282467/305530
+
+Why do these exist in the distribution we saw like most are really rare and none inbetween really. Something to do with hardy weinberg?
+
+
+# Question on IBD 
+
+What could be happening with the relationship between 5136-SB-0663 & 5136-SB-0666? (Hint: look at PI HAT)
+
+```
+   FID1          IID1   FID2          IID2 RT    EZ      Z0      Z1      Z2  PI_HAT PHE       DST     PPC   RATIO
+   1130  5136-SB-0678   1130  5136-SB-0679 PO   0.5  0.0332  0.9324  0.0344  0.5006   0  0.903368  1.0000 36.0000
+   1130  5136-SB-0678   1130  5136-SB-0680 PO   0.5  0.0325  0.9196  0.0479  0.5077   0  0.904732  1.0000 17.7500
+   1130  5136-SB-0679   1130  5136-SB-0680 OT     0  0.8181  0.1664  0.0155  0.0987  -1  0.852066  0.9292  2.9474
+   1225  5136-SB-0663   1225  5136-SB-0664 PO   0.5  0.0000  1.0000  0.0000  0.5000   0  0.898837  1.0000 36.5000
+   1225  5136-SB-0663   1225  5136-SB-0665 PO   0.5  0.0254  0.9461  0.0285  0.5015   0  0.903279  1.0000 36.0000
+   1225  5136-SB-0663   1225  5136-SB-0666 FS   0.5  0.4414  0.4721  0.0865  0.3225   1  0.882745  0.9997  5.8182
+   1225  5136-SB-0664   1225  5136-SB-0665 OT     0  1.0000  0.0000  0.0000  0.0000  -1  0.846839  0.0432  1.3438
+   1225  5136-SB-0664   1225  5136-SB-0666 PO   0.5  0.0255  0.9206  0.0539  0.5142   0  0.905761  1.0000 36.5000
+   1225  5136-SB-0665   1225  5136-SB-0666 PO   0.5  0.0361  0.9198  0.0441  0.5040   0  0.904128  1.0000 11.5000
+```
+
+I actually just noticed this yesterday as I am still curating the FAM file more myself but it seems records show that these two
+are FS but here it looks like HS or something else weird like some sort of incest since it is unclear how PI_HAT ~.33. Something I will 
+talk with anthony about. In addition you see here that we have some non perfect trios in the study. These are helpful
+
+
+
+
+
+
+
+
+
+# TODO 
+- fix plink_final.slurm and fix mendel error and ibd order
+- add extracting a few certain snps to see which individuals vary
+- could add just explore tdt file with excel part
+- PRS: https://choishingwan.github.io/PRS-Tutorial/plink/
+
+

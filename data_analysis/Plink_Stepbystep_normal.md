@@ -70,6 +70,8 @@ eval $call11
 - While we work on this exercise do you have any other types of analysis you are interested in? Think about how these might 
 fit into such a workflow and see if Plink has options for them. We have covered a workflow and if you understand all of the 
 components it should be fairly easy to update and customize to your interests. If we have time we can try to discuss some of these in a bit more detail.
+- It still goes without saying that there are tons of other software out there for GWAS studies beyond plink, unfortunately we do
+not have time to cover them all. 
 
 ### <font color='red'> End Group Exercise 1, Break </font>
 

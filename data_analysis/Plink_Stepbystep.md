@@ -14,7 +14,8 @@
 - Calculate Identity by Descent (IBD)
 - Get Mendelian Errors and filter these out.
 - Calculate TDT (transmission disequilibrium test), a type of FBAT (family based assocation test)
-
+- Some prep for wAnnovar
+- Putting it all together as a script to run on the cluster
 
 ![](figures/2075fd2e.png)
 

@@ -65,6 +65,12 @@ eval $call11
 
 
 
+## Side note:
+
+- While we work on this exercise do you have any other types of analysis you are interested in? Think about how these might 
+fit into such a workflow and see if Plink has options for them. We have covered a workflow and if you understand all of the 
+components it should be fairly easy to update and customize to your interests. If we have time we can try to discuss some of these in a bit more detail.
+
 ### <font color='red'> End Group Exercise 1, Break </font>
 
 Discussing the answers to the above question. 5 minute break.

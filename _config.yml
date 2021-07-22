@@ -51,8 +51,13 @@ navigation:
     url: data_reduction/comparison
 
   - heading: Data Analysis
-  - title: Data Analysis
-    url: data_analysis/GWAS
+  - title: Plink Step by Step TDT
+  - url: data_analysis/Plink_Stepbystep
+  - title: wAnnovar Annotation
+  - url: data_analysis/wAnnovar_annotation
+  - title: Plink Step by Step (Non FBAT excercise)
+  - url: data_analysis/Plink_Stepbystep_normal
+    
 
   - heading: ETC
   - title: Closing thoughts

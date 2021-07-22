@@ -339,8 +339,7 @@ eval $ibdcalc
 - What kind of file is produced here? `.genome` file
 - [genome file from Plink](https://www.cog-genomics.org/plink/1.9/ibd)
 - These calculations are not LD-aware. It is usually a good idea to perform some form of LD-based pruning before invoking them.
-- https://www.biostars.org/p/188894/#189052
-
+- [Helpful Biostars link explaining PIHAT, Z0, Z1, Z2](https://www.biostars.org/p/188894/#189052)
 
 ```
 relcheck="plink --bfile ${outpath}/idb_${sample} --genome --rel-check --out ${outpath}/ibd-relcheck_${sample}"

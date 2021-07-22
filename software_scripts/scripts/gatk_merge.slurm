@@ -33,6 +33,14 @@ call="gatk --java-options '-Xmx4g -Xmx4g' MergeVcfs \
 echo $call
 eval $call
 
+call="gatk --java-options '-Xmx4g -Xms4g' SelectVariants \
+	-V ${outpath}/trio.filtered.all.vcf.gz \
+	--exclude-filtered true \
+	-O ${outpath}/trio.final.vcf.gz"
+
+echo $call
+eval $call
+
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime

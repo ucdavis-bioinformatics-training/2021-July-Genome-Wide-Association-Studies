@@ -70,30 +70,23 @@ download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training
  "GWASvisualization.Rmd")
 
 ```
+Open that file.
 
 
 ### Download the data for the workshop, extract it.
 In the R console run the following command.
 ```
-download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2020-Intro_Single_Cell_RNA_Seq/master/datasets/expression_tables_cellrangerV3.zip", "expression_tables_cellrangerV3.zip")
-system("unzip expression_tables_cellrangerV3.zip") # works in Linux and Mac, not sure about Windows"
+download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2021-July-Genome-Wide-Association-Studies/main/datasets/query.output.genome_summary.csv", "query.output.genome_summary.csv")
 ```
 
-
-### Edit the file YAML portion
-The top YAML (YAML ain’t markup language) portion of the doc tells RStudio how to parse the document.
-
+```
+download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2021-July-Genome-Wide-Association-Studies/main/datasets/tdtadj.csv", "tdtadj.csv")
+```
 
 ```
----
-title: "Single Cell RNAseq Part 1"
-author: your_name
-date: current_date
-output:
-    html_notebook: default
-    html_document: default
----
+download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2021-July-Genome-Wide-Association-Studies/main/datasets/tdtfrq.csv", "tdtfrq.csv")
 ```
+
 Your RStudio should look something like this
 
 

@@ -47,7 +47,7 @@ eval $call
 call="gatk --java-options '-Xmx4g' ApplyVQSR \
 	-R References/chr22.fa \
 	-V ${outpath}/trio.vcf.gz \
-	-O ${outpath}/trio.snp.recal.vcf.gz \
+	-O ${outpath}/trio.snp.recal.indel.raw.vcf.gz \
 	--truth-sensitivity-filter-level 99.9 \
 	--tranches-file ${outpath}/trio.snp.tranches \
 	--recal-file ${outpath}/trio.snp.recal \
@@ -60,7 +60,7 @@ eval $call
 # Indels
 call="gatk --java-options '-Xmx4g -Xmx4g' VariantRecalibrator \
 	-R References/chr22.fa \
-	-V ${outpath}/trio.vcf.gz \
+	-V ${outpath}/trio.snp.recal.indel.rawvcf.gz \
 	--trust-all-polymorphic \
 	-tranche 100.0 -tranche 99.95 -tranche 99.9 \
 	--resource:mills,known=false,training=true,truth=true,prior=12 References/Mills_and_1000G_gold_standard.indels.hg38.vcf \
@@ -78,8 +78,8 @@ eval $call
 
 call="gatk --java-options '-Xmx4g' ApplyVQSR \
 	-R References/chr22.fa \
-	-V ${outpath}/trio.vcf.gz \
-	-O ${outpath}/trio.indel.recal.vcf.gz \
+	-V ${outpath}/trio.snp.recal.indel.raw.vcf.gz \
+	-O ${outpath}/trio.recal.vcf.gz \
 	--truth-sensitivity-filter-level 99.9 \
 	--tranches-file ${outpath}/trio.indel.tranches \
 	--recal-file ${outpath}/trio.indel.recal \

@@ -11,7 +11,7 @@ output:
   word_document: default
 ---
 
-# We will need to get the tdt results for the data
+### We will need to get the tdt results for the data
 ```{bash, include=F, eval=FALSE, engine="sh"}
 user="keithgmitchell"
 scp ${user}@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/${user}/plink/tdtfrq.csv  .
@@ -20,9 +20,6 @@ scp ${user}@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/${use
 ```
 
 
-```{r setup, include=FALSE}
-#rmarkdown::render("GWASvisualizations.Rmd", clean = FALSE)
-```
 
 
 ```{r, echo=F, include=F}
@@ -68,11 +65,25 @@ head(final)
 ```
 What are the top dbSNP ids for the UNADJ p values
 ```{r}
-annotate <- head(final %>% arrange(UNADJ), 20)$dbSNP
-annotate <- annotate[annotate != '' & annotate !='.']
+sort_byp <- final %>% arrange(UNADJ)
+head(sort_byp)
 ```
+
+
+```{r}
+annotate <- head(sort_byp$dbSNP)
+annotate <- annotate[annotate != ""]
+annotate
+```
+
 Make the Manhattan plot on the final dataset
 Make the Manhattan plot on the gwasResults dataset
+
+
+```{r}
+?manhattan
+```
+
 ```{r}
 manhattan(final, chr="CHR", bp="SNP", snp="dbSNP", p="UNADJ" )
 manhattan(gwasResults)
@@ -82,6 +93,7 @@ A list of SNP of interest is provided with the library:
 Let's highlight them, with a bit of customization on the plot
 By default -log base 10 is used to transform our p-values. Lets see why
 ```{r}
+annotate
 manhattan(final,  chr="CHR", bp="SNP", snp="dbSNP", p="UNADJ", highlight = annotate, logp=F)
 manhattan(final,  chr="CHR", bp="SNP", snp="dbSNP", p="UNADJ", highlight = annotate, logp=T)
 ```

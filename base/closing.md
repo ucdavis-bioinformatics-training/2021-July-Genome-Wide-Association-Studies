@@ -24,7 +24,11 @@
 
 ## Next Steps
 
-My recommendation is to follow all of the instructions again, from the beginning on your own and send emails to [training.bioinformatics@ucdavis.edu](mailto:training.bioinformatics@ucdavis.edu). We will be responsive to answering questions.
+My recommendation is to follow all of the instructions again, from the beginning on your own and use the slack channel to ask questions or send emails to [training.bioinformatics@ucdavis.edu](mailto:training.bioinformatics@ucdavis.edu). We will try be responsive to answering questions.
+
+You'll have access to the Computing Workshop resources for an additional week, use it to repeat the workshop materials, run freebayes, deepvariant, and/or work on your own dataset. Just transfer your data to /share/workshop
+
+workshop     ACTIVE  2021-07-18T00:00:00  2021-07-31T00:00:00  13-00:00:00  fleet-[18,20,28]
 
 ##  Upcoming Workshops
 
@@ -32,7 +36,6 @@ Check out our [upcoming course offerings](https://registration.genomecenter.ucda
 
 ## Previous Workshops available online
 If you would like to take a look at the [documentation](https://ucdavis-bioinformatics-training.github.io/) from previous workshops.
-
 
 ## Questions?
 

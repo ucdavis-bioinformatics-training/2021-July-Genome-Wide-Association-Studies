@@ -32,7 +32,7 @@ navigation:
   - title: CLI
     url: intro/command-line-intro
   - title: R
-    url: intro/Intro2R
+    url: prerequisites/intro2R/Intro2R_fixed
   - title: Cluster Computing
     url: intro/cluster
 
@@ -57,7 +57,10 @@ navigation:
     url: data_analysis/wAnnovar_annotation
   - title: Plink Step by Step (Non FBAT excercise)
     url: data_analysis/Plink_Stepbystep_normal
-
+  - title: Setup in R
+    url: data_analysis/GWASvisualization_setup
+  - title: GWAS Visualization
+    url: data_analysis/GWASvisualization_fixed
 
   - heading: ETC
   - title: Closing thoughts

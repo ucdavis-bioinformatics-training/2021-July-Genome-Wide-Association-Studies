@@ -23,16 +23,11 @@ scp ${user}@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/${use
 #rmarkdown::render("GWASvisualizations.Rmd", clean = FALSE)
 ```
 
-# TODO auto install chunk? Not sure I remember how we do this
-- explain packages as well.
-```{r}
-#install.packages("qqman")
-#install.packages("CMplot")
-```
 
 ```{r}
 library(qqman)
 library(dplyr)
+library(ggplot2)
 ```
 
 For a comparison, a sample dataset is provided in order to show what all chromosomes would look like. We will create some visualization with this as well. 
@@ -67,7 +62,7 @@ head(anno)
 There seem to be some NA values produced by plink for TDT.. why might this be?
 ```{r}
 final <- merge(cleantdt, anno, by.x=c("CHR","SNP"), by.y=c("Chr", "Start"))
-head(final)
+head(final, 200)
 ```
 Make the Manhattan plot on the final dataset
 Make the Manhattan plot on the gwasResults dataset
@@ -87,11 +82,7 @@ manhattan(final,  chr="CHR", bp="SNP", snp="dbSNP", p="UNADJ", annotatePval = 0.
 manhattan(gwasResults, annotatePval = 0.05)
 ```
 
-## qqplot It is a good practice to draw a qqplot from the output of a GWAS. It allows to compare the distribution of the pvalue with an expected distribution by chance. Its realisation is straightforward thanks to the qq function:
 
-```{r}
-qq(final$UNADJ)
-```
 
 
 We have tons of other metadata, what else would be interesting to explore?
@@ -109,4 +100,24 @@ CMplot(gwasResults, plot.type="c", r=1.6, cir.legend=TRUE,
 
 
 ![](../Circular-Manhattan.P.jpg)
+
+
+
+## Explore the metadata:
+- MAF
+```{r}
+p <- ggplot(final, aes(x=MAF, fill=as.factor(CHR))) + geom_histogram( color="#e9ecef", binwidth = 0.01, alpha=0.6, position = 'identity') +
+    scale_fill_manual(values=c("blue", "green")) +
+    labs(fill="")
+p
+```
+
+Isolating a gene of interest:
+```{r}
+```
+
+
+
+
+
 

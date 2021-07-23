@@ -51,7 +51,7 @@ Lets read in the TDT results
 - The adjusted file is a bit smaller here since the NA values cannot be adjusted and are ommitted. So lets merge and only keep values that exist in the adjusted file, but lets add the frequency or MAF
 
 ```r
-tdtfrq <- read.csv("../tdtfrq.csv")
+tdtfrq <- read.csv("../datasets/tdtfrq.csv")
 head(tdtfrq)
 ```
 
@@ -67,7 +67,7 @@ head(tdtfrq)
 
 
 ```r
-tdtadj <- read.csv("../tdtadj.csv", row.names=NULL)
+tdtadj <- read.csv("../datasets/tdtadj.csv", row.names=NULL)
 head(tdtadj)
 ```
 

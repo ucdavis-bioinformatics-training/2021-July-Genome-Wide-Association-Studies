@@ -60,7 +60,7 @@ navigation:
   - title: Setup in R
     url: data_analysis/GWASvisualization_setup
   - title: GWAS Visualization
-    url: data_analysis/GWASvisualization_fixed
+    url: data_analysis/GWASvisualizations.html
 
   - heading: ETC
   - title: Closing thoughts

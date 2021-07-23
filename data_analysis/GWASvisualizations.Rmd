@@ -3,10 +3,11 @@ title: "GWAS Visualization in R"
 author: "Keith Mitchel, UC Davis Bioinformatics Core"
 date: "7/7/2021"
 output:
+  html_document: default
   pdf_document:
     toc: yes
     keep_tex: yes
-  html_document: default
+    keep_md: yes
   word_document: default
 ---
 
@@ -24,10 +25,11 @@ scp ${user}@tadpole.genomecenter.ucdavis.edu:/share/workshop/gwas_workshop/${use
 ```
 
 
-```{r}
+```{r, echo=F, include=F}
 library(qqman)
 library(dplyr)
 library(ggplot2)
+library(kableExtra)
 ```
 
 For a comparison, a sample dataset is provided in order to show what all chromosomes would look like. We will create some visualization with this as well. 
@@ -39,12 +41,12 @@ head(gwasResults)
 Lets read in the TDT results
 - The adjusted file is a bit smaller here since the NA values cannot be adjusted and are ommitted. So lets merge and only keep values that exist in the adjusted file, but lets add the frequency or MAF
 ```{r}
-tdtfrq <- read.csv("tdtfrq.csv")
+tdtfrq <- read.csv("data_analysis/tdtfrq.csv")
 head(tdtfrq)
 ```
 
 ```{r}
-tdtadj <- read.csv("tdtadj.csv", row.names=NULL)
+tdtadj <- read.csv("data_analysis/tdtadj.csv", row.names=NULL)
 head(tdtadj)
 ```
 Lets merge our frequences with the TDT results. 
@@ -55,14 +57,19 @@ head(cleantdt)
 
 Lets read in the annotation information
 ```{r}
-anno <- read.csv('query.output.genome_summary.csv')
+anno <- read.csv('data_analysis/query.output.genome_summary.csv')
 head(anno)
 ```
 
 There seem to be some NA values produced by plink for TDT.. why might this be?
 ```{r}
 final <- merge(cleantdt, anno, by.x=c("CHR","SNP"), by.y=c("Chr", "Start"))
-head(final, 200)
+head(final)
+```
+What are the top dbSNP ids for the UNADJ p values
+```{r}
+annotate <- head(final %>% arrange(UNADJ), 20)$dbSNP
+annotate <- annotate[annotate != '' & annotate !='.']
 ```
 Make the Manhattan plot on the final dataset
 Make the Manhattan plot on the gwasResults dataset
@@ -73,8 +80,10 @@ manhattan(gwasResults)
 
 A list of SNP of interest is provided with the library:
 Let's highlight them, with a bit of customization on the plot
+By default -log base 10 is used to transform our p-values. Lets see why
 ```{r}
-manhattan(final,  chr="CHR", bp="SNP", snp="dbSNP", p="UNADJ", highlight = c("rs370508396"))
+manhattan(final,  chr="CHR", bp="SNP", snp="dbSNP", p="UNADJ", highlight = annotate, logp=F)
+manhattan(final,  chr="CHR", bp="SNP", snp="dbSNP", p="UNADJ", highlight = annotate, logp=T)
 ```
 
 ```{r}
@@ -111,12 +120,36 @@ p <- ggplot(final, aes(x=MAF, fill=as.factor(CHR))) + geom_histogram( color="#e9
     labs(fill="")
 p
 ```
-
-Isolating a gene of interest:
+- population MAF
 ```{r}
+p <- ggplot(final, aes(x=as.numeric(X1000G_ALL), fill=as.factor(CHR))) + geom_histogram( color="#e9ecef", binwidth = 0.03, alpha=0.6, position = 'identity') +
+    scale_fill_manual(values=c("blue", "green")) +
+    labs(fill="")
+p
+```
+```{r}
+final$Delta <- as.numeric(final$X1000G_ALL) - as.numeric(final$MAF)
+```
+
+- delta of population and samples
+```{r}
+p <- ggplot(final, aes(x=Delta, fill=as.factor(CHR))) + geom_histogram( color="#e9ecef", binwidth = 0.03, alpha=0.4, position = 'identity') +
+    scale_fill_manual(values=c("blue", "green")) +
+    labs(fill="")
+p
 ```
 
 
+Isolating just exonic regions:
+```{r}
+final_exonic <- final %>% filter(Func.refGene == "exonic")
+head(final_exonic)
+```
+
+- which gene has the most exonic regions
+```{r}
+which.max(table(final_exonic$Gene.refGene))
+```
 
 
 

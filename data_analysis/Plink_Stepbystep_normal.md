@@ -79,5 +79,15 @@ Discussing the answers to the above question. 5 minute break.
 
 
 
+![](figures/638ca9c7.png)
+- FAM file would likely have a different format (see above examples)
+- IBD check will have different expectations
+- wAnnovar may not be relevant if working on non-human organism.
+- if non FBAT then mendelian errors not necessary.
+- --assoc may be used and PCA covariate adjustment may be needed for large popluation differences
+
+
+
+
 
 

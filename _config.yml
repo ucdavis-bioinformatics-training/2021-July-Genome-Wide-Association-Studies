@@ -11,6 +11,8 @@ navigation:
     url: base/welcome
   - title: Schedule
     url: base/schedule
+  - title: Dr. Anthony Musolf Talk
+    url: base/uc-davis-talk.pdf
   - title: What is Bioinformatics/Genomics?
     url: https://raw.githubusercontent.com/ucdavis-bioinformatics-training/ucdavis-bioinformatics-training.presentations/master/genomics/Genomics_a_perspective_May_2020.pdf
 
@@ -53,6 +55,8 @@ navigation:
   - heading: Data Analysis
   - title: Plink Step by Step TDT
     url: data_analysis/Plink_Stepbystep
+  - title: Plink Step by Step TDT (solutions)
+    url: data_analysis/Plink_Stepbystep_solutions
   - title: wAnnovar Annotation
     url: data_analysis/wAnnovar_annotation
   - title: Plink Step by Step (Non FBAT excercise)
